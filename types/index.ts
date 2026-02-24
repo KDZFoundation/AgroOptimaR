@@ -1,0 +1,76 @@
+export type KampaniaStatus = 'zakonczona' | 'w_toku' | 'robocza';
+
+export interface Rolnik {
+    id: string;
+    numer_producenta: string;
+    imie: string;
+    nazwisko: string;
+    email: string;
+    created_at: string;
+}
+
+export interface Kampania {
+    id: string;
+    rok: number;
+    status: KampaniaStatus;
+    data_od: string;
+    data_do: string;
+}
+
+export interface Dzialka {
+    id: string;
+    rolnik_id: string;
+    numer_dzialki: string;
+    obreb: string;
+    gmina: string;
+    powiat: string;
+    powierzchnia_ha: number;
+    klasa_bonitacyjna: string;
+    uprawa_id?: string;
+}
+
+export interface Uprawa {
+    id: string;
+    kod: string;
+    nazwa: string;
+    kategoria: string;
+}
+
+export interface EkoschematStawka {
+    id: string;
+    kampania_rok: number;
+    kod_ekoschematu: string;
+    nazwa: string;
+    stawka_pln_ha: number;
+    punkty_ha?: number;
+    limit_ha?: number;
+    typ_gruntu: 'GO' | 'TUZ' | 'GO+TUZ';
+}
+
+export interface WniosekPDF {
+    id: string;
+    rolnik_id: string;
+    kampania_rok: number;
+    nazwa_pliku: string;
+    status_parsowania: 'oczekujacy' | 'sukces' | 'blad';
+    dane_json: any;
+    created_at: string;
+}
+
+export interface Kalkulacja {
+    id: string;
+    rolnik_id: string;
+    kampania_rok: number;
+    dane_wejsciowe_json: any;
+    wynik_json: any;
+    created_at: string;
+}
+
+export interface RolnictwoWeglowePunktacja {
+    id: string;
+    rolnik_id: string;
+    kampania_rok: number;
+    praktyka_kod: string;
+    powierzchnia_ha: number;
+    punkty: number;
+}

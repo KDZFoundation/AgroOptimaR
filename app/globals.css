@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --green-900: #0d2018;
+  --green-800: #1a3a2a;
+  --green-700: #2d5c3e;
+  --green-600: #3d7a52;
+  --green-500: #4e9a68;
+  --green-400: #6cb87f;
+  --green-300: #94d4a0;
+  --green-100: #e8f5eb;
+  --green-50: #f4fbf5;
+  
+  --gold-600: #8a6a1a;
+  --gold-500: #c9a84c;
+  --gold-400: #e0c068;
+  --gold-100: #fdf7e3;
+  
+  --text-primary: #1a2e1a;
+  --text-secondary: #4a6741;
+  --text-muted: #8aad88;
+  
+  --bg-page: #f7faf7;
+  --bg-card: #ffffff;
+  --border: #d4e8d4;
+  
+  --success: #2d8a4e;
+  --warning: #c9841c;
+  --error: #c94040;
+  --info: #2d6a8a;
+
+  --font-lora: 'Lora', serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-dm-mono: 'DM Mono', monospace;
+}
+
+@theme {
+  --color-green-900: var(--green-900);
+  --color-green-800: var(--green-800);
+  --color-green-700: var(--green-700);
+  --color-green-600: var(--green-600);
+  --color-green-500: var(--green-500);
+  --color-green-400: var(--green-400);
+  --color-green-300: var(--green-300);
+  --color-green-100: var(--green-100);
+  --color-green-50: var(--green-50);
+  
+  --color-gold-600: var(--gold-600);
+  --color-gold-500: var(--gold-500);
+  --color-gold-400: var(--gold-400);
+  --color-gold-100: var(--gold-100);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  
+  --color-bg-page: var(--bg-page);
+  --color-bg-card: var(--bg-card);
+  --color-border-custom: var(--border);
+  
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-dm-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-lora);
+  font-weight: 700;
+}
+
+.agri-gradient {
+  background: linear-gradient(135deg, var(--green-900) 0%, var(--green-800) 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-600) 100%);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(13, 32, 24, 0.08);
+}

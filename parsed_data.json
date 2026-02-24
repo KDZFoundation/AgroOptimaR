@@ -1,0 +1,163 @@
+[
+  {
+    "letter": "A",
+    "parcel": "126/55",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "9.00",
+    "payments": "ONW, PWD, UPP, E_IPR"
+  },
+  {
+    "letter": "A",
+    "parcel": "126/42",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "16.35",
+    "payments": "ONW, PWD, UPP, E_IPR, E_USU"
+  },
+  {
+    "letter": "A",
+    "parcel": "126/43",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "0.63",
+    "payments": "ONW, PWD, UPP, E_IPR, E_USU"
+  },
+  {
+    "letter": "A",
+    "parcel": "126/44",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "3.57",
+    "payments": "ONW, PWD, UPP, E_IPR, E_USU"
+  },
+  {
+    "letter": "A",
+    "parcel": "126/45",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "0.92",
+    "payments": "ONW, PWD, UPP, E_IPR, E_USU"
+  },
+  {
+    "letter": "A",
+    "parcel": "126/46",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "1.07",
+    "payments": "ONW, PWD, UPP, E_IPR, E_USU"
+  },
+  {
+    "letter": "A",
+    "parcel": "126/47",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "1.06",
+    "payments": "ONW, PWD, UPP, E_IPR, E_USU"
+  },
+  {
+    "letter": "A",
+    "parcel": "126/48",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "1.71",
+    "payments": "ONW, PWD, UPP, E_IPR, E_USU"
+  },
+  {
+    "letter": "A",
+    "parcel": "126/55",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "62.31",
+    "payments": "ONW, PWD, UPP, E_IPR, E_USU"
+  },
+  {
+    "letter": "C",
+    "parcel": "126/42",
+    "crop": "owies zwyczajny",
+    "area": "3.91",
+    "payments": "ONW, PWD, UPP, E_USU"
+  },
+  {
+    "letter": "C",
+    "parcel": "126/50",
+    "crop": "owies zwyczajny",
+    "area": "1.95",
+    "payments": "ONW, PWD, UPP, E_USU"
+  },
+  {
+    "letter": "C",
+    "parcel": "126/51",
+    "crop": "owies zwyczajny",
+    "area": "0.20",
+    "payments": "ONW, PWD, UPP, E_USU"
+  },
+  {
+    "letter": "C",
+    "parcel": "126/55",
+    "crop": "owies zwyczajny",
+    "area": "9.15",
+    "payments": "ONW, PWD, UPP, E_USU"
+  },
+  {
+    "letter": "D",
+    "parcel": "126/55",
+    "crop": "owies zwyczajny",
+    "area": "0.61",
+    "payments": "ONW, PWD, UPP"
+  },
+  {
+    "letter": "E",
+    "parcel": "126/51",
+    "crop": "owies zwyczajny",
+    "area": "0.16",
+    "payments": "ONW, PWD, UPP"
+  },
+  {
+    "letter": "E",
+    "parcel": "126/55",
+    "crop": "owies zwyczajny",
+    "area": "0.30",
+    "payments": "ONW, PWD, UPP"
+  },
+  {
+    "letter": "I",
+    "parcel": "126/49",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "1.93",
+    "payments": "ONW, PWD, UPP, E_IPR"
+  },
+  {
+    "letter": "I",
+    "parcel": "126/50",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "21.80",
+    "payments": "ONW, PWD, UPP, E_IPR"
+  },
+  {
+    "letter": "I",
+    "parcel": "126/51",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "0.62",
+    "payments": "ONW, PWD, UPP, E_IPR"
+  },
+  {
+    "letter": "I",
+    "parcel": "126/52",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "0.28",
+    "payments": "ONW, PWD, UPP, E_IPR"
+  },
+  {
+    "letter": "I",
+    "parcel": "126/53",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "2.80",
+    "payments": "ONW, PWD, UPP, E_IPR"
+  },
+  {
+    "letter": "I",
+    "parcel": "126/54",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "0.02",
+    "payments": "ONW, PWD, UPP, E_IPR"
+  },
+  {
+    "letter": "I",
+    "parcel": "126/55",
+    "crop": "pszenica zwyczajna ozima",
+    "area": "73.09",
+    "payments": "ONW, PWD, UPP, E_IPR"
+  }
+]

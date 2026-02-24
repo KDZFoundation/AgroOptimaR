@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f7faf7;
+  color: #1a2e1a;
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+}
+
+.agri-gradient {
+  background: linear-gradient(135deg, #0d2018 0%, #1a3a2a 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #c9a84c 0%, #8a6a1a 100%);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(13, 32, 24, 0.08);
+}
