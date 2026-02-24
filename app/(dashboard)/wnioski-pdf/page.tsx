@@ -64,6 +64,7 @@ export default function WnioskiPdfPage() {
     // Helper to check missing years
     const uploadedYears = new Set(wnioski.map(w => w.kampania_rok))
     const missingYears = REQUIRED_YEARS.filter(year => !uploadedYears.has(year))
+    const hasRequired2025 = uploadedYears.has(2025)
 
     const columns: Column<Wniosek>[] = [
         {
@@ -104,14 +105,23 @@ export default function WnioskiPdfPage() {
                     <h2 className="text-3xl font-bold text-text-primary">Wnioski PDF (RAG)</h2>
                     <p className="text-text-secondary mt-1">Prześlij wniosek z eWniosekPlus, aby automatycznie uzupełnić dane.</p>
                 </div>
-                {missingYears.length === 0 ? (
-                    <Button variant="gold" icon={<Cpu className="w-4 h-4" />}>Uruchom Symulację i Optymalizację</Button>
-                ) : (
-                    <div className="flex items-center gap-2 text-text-secondary text-sm">
-                        <AlertTriangle className="w-4 h-4 text-warning" />
-                        Uzupełnij brakujące lata, aby uruchomić symulację.
-                    </div>
-                )}
+                <div className="flex flex-col items-end gap-2">
+                    {hasRequired2025 ? (
+                         <Button variant="gold" icon={<Cpu className="w-4 h-4" />}>Uruchom Symulację i Optymalizację</Button>
+                    ) : (
+                        <div className="text-sm text-error font-bold flex items-center gap-2">
+                             <AlertTriangle className="w-4 h-4" />
+                             Wymagany wniosek 2025
+                        </div>
+                    )}
+
+                    {hasRequired2025 && missingYears.length > 0 && (
+                        <div className="flex items-center gap-2 text-warning text-xs">
+                            <AlertTriangle className="w-3 h-3" />
+                            Zalecane uzupełnienie lat: {missingYears.join(', ')}
+                        </div>
+                    )}
+                </div>
             </div>
 
             {/* STATUS YEARS */}
