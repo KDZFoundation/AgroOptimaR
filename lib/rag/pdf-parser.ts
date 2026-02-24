@@ -1,6 +1,6 @@
 // @ts-ignore
 import * as pdf from 'pdf-parse'
-import { Anthropic } from 'anthropic'
+import Anthropic from '@anthropic-ai/sdk'
 import { removeNonPrintable, extractJsonFromResponse } from './text-utils'
 
 const anthropic = new Anthropic({

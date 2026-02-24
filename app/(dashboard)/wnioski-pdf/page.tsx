@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Card, Button, Badge, DataTable, Modal } from '@/components/ui'
+import { Card, Button, Badge, DataTable, Modal, type Column } from '@/components/ui'
 import { FileUp, FileText, CheckCircle2, AlertCircle, Clock, Trash2, Download, Eye, Cpu } from 'lucide-react'
 
 const MOCK_FILES = [
@@ -14,9 +14,9 @@ export default function WnioskiPdfPage() {
     const [isUploading, setIsUploading] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-    const columns = [
+    const columns: Column<typeof MOCK_FILES[0]>[] = [
         {
-            header: 'Nazwa pliku', accessor: (item: any) => (
+            header: 'Nazwa pliku', accessor: (item) => (
                 <div className="flex items-center gap-3">
                     <FileText className="w-5 h-5 text-gray-400" />
                     <span className="font-bold text-text-primary">{item.nazwa}</span>
@@ -24,16 +24,16 @@ export default function WnioskiPdfPage() {
             )
         },
         { header: 'Data przesłania', accessor: 'data' },
-        { header: 'Kampania', accessor: (item: any) => <Badge variant="neutral">{item.kampania}</Badge> },
+        { header: 'Kampania', accessor: (item) => <Badge variant="neutral">{item.kampania}</Badge> },
         {
-            header: 'Status', accessor: (item: any) => (
+            header: 'Status', accessor: (item) => (
                 <Badge variant={item.status === 'sukces' ? 'success' : 'error'}>
                     {item.status.toUpperCase()}
                 </Badge>
             )
         },
         {
-            header: 'Akcje', accessor: (item: any) => (
+            header: 'Akcje', accessor: (item) => (
                 <div className="flex items-center gap-2">
                     <Button variant="ghost" size="sm" icon={<Eye className="w-4 h-4" />} />
                     <Button variant="ghost" size="sm" icon={<Download className="w-4 h-4" />} />

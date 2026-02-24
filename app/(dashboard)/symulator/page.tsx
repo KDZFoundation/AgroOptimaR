@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import { Card, Button, Badge, DataTable, Tooltip, Modal } from '@/components/ui'
 import { Zap, AlertTriangle, CheckCircle2, Info, Plus, Info as InfoIcon } from 'lucide-react'
-import { EKOSCHEMATY_POWIERZCHNIOWE } from '@/lib/constants'
 
 // Uproszczona matryca kompatybilności dla potrzeb symulatora
 const KOMPATYBILNOSC: Record<string, string[]> = {

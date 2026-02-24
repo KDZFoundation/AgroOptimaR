@@ -1,11 +1,19 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Card, Tabs, DataTable, Button, Badge, Modal } from '@/components/ui'
+import React, { useState, Suspense } from 'react'
+import { Card, Tabs, DataTable, Button, Badge, Modal, type Column } from '@/components/ui'
 import { Plus, Settings, Map, Coins, Sprout, ShieldCheck } from 'lucide-react'
 import { useSearchParams, useRouter } from 'next/navigation'
 
 export default function PanelRolnikaPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PanelRolnikaContent />
+        </Suspense>
+    )
+}
+
+function PanelRolnikaContent() {
     const searchParams = useSearchParams()
     const router = useRouter()
     const activeTab = searchParams.get('tab') || 'dzialki'
@@ -50,11 +58,11 @@ function DzialkiTab() {
         { id: '3', numer: '45/3', obreb: 'Dąbrowa', pow: '22.10', uprawa: 'Rzepak ozimy' },
     ]
 
-    const columns = [
+    const columns: Column<typeof data[0]>[] = [
         { header: 'Numer działki', accessor: 'numer' },
         { header: 'Obręb', accessor: 'obreb' },
         { header: 'Powierzchnia (ha)', accessor: 'pow' },
-        { header: 'Aktualna uprawa', accessor: (item: any) => <Badge variant="info">{item.uprawa}</Badge> },
+        { header: 'Aktualna uprawa', accessor: (item) => <Badge variant="info">{item.uprawa}</Badge> },
     ]
 
     return (
@@ -71,11 +79,11 @@ function StawkiTab() {
         { kod: 'E_MPW', nazwa: 'Międzyplony ozime', stawka: '5.00', jedn: 'PKT/ha' },
     ]
 
-    const columns = [
+    const columns: Column<typeof data[0]>[] = [
         { header: 'Kod', accessor: 'kod' },
         { header: 'Nazwa płatności', accessor: 'nazwa' },
         { header: 'Stawka (2025)', accessor: 'stawka' },
-        { header: 'Jednostka', accessor: (item: any) => <span className="font-mono text-[10px]">{item.jedn}</span> },
+        { header: 'Jednostka', accessor: (item) => <span className="font-mono text-[10px]">{item.jedn}</span> },
     ]
 
     return (
@@ -92,7 +100,7 @@ function UprawyTab() {
         { kod: '303', nazwa: 'Burak cukrowy', kategoria: 'Korzeniowe' },
     ]
 
-    const columns = [
+    const columns: Column<typeof data[0]>[] = [
         { header: 'Kod ARiMR', accessor: 'kod' },
         { header: 'Nazwa uprawy', accessor: 'nazwa' },
         { header: 'Kategoria', accessor: 'kategoria' },
