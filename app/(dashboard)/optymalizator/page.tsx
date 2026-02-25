@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { Card, Button, Badge, ProgressBar, StatCard } from '@/components/ui'
-import { Cpu, Zap, TrendingUp, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react'
+import { Cpu, Zap, TrendingUp, ArrowRight, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react'
 
 export default function OptymalizatorPage() {
     const [isOptimizing, setIsOptimizing] = useState(false)

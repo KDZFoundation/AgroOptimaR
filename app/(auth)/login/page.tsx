@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { Sprout, Lock, User, AlertCircle } from 'lucide-react'
+import { Sprout, Lock, Mail, AlertCircle } from 'lucide-react'
 
 export default function LoginPage() {
-    const [epNumber, setEpNumber] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
@@ -18,22 +18,13 @@ export default function LoginPage() {
         setLoading(true)
         setError(null)
 
-        if (epNumber.length !== 9) {
-            setError('Numer producenta EP musi mieć dokładnie 9 cyfr.')
-            setLoading(false)
-            return
-        }
-
-        // W rzeczywistej aplikacji używalibyśmy email/hasło, ale tutaj
-        // zmapujemy EP + hasło zgodnie z wymaganiami.
-        // Dla potrzeb demo użyjemy email = epNumber@agrooptima.pl
         const { error: loginError } = await supabase.auth.signInWithPassword({
-            email: `${epNumber}@agrooptima.pl`,
-            password: password,
+            email,
+            password,
         })
 
         if (loginError) {
-            setError('Nieprawidłowy numer producenta lub hasło.')
+            setError('Nieprawidłowy email lub hasło.')
             setLoading(false)
         } else {
             router.push('/pulpit')
@@ -63,25 +54,20 @@ export default function LoginPage() {
                         )}
 
                         <div className="space-y-2">
-                            <label htmlFor="ep" className="text-sm font-semibold text-text-secondary block">
-                                Numer producenta EP (9 cyfr)
+                            <label htmlFor="email" className="text-sm font-semibold text-text-secondary block">
+                                Adres Email
                             </label>
                             <div className="relative">
-                                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                                 <input
-                                    id="ep"
-                                    type="text"
-                                    pattern="[0-9]{9}"
-                                    maxLength={9}
+                                    id="email"
+                                    type="email"
                                     required
-                                    value={epNumber}
-                                    onChange={(e) => setEpNumber(e.target.value.replace(/\D/g, ''))}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     className="w-full pl-10 pr-12 py-3 bg-green-50/50 border border-green-100 rounded-xl focus:ring-2 focus:ring-green-500/20 focus:border-green-500 outline-none transition-all text-text-primary"
-                                    placeholder="000000000"
+                                    placeholder="jan@example.com"
                                 />
-                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-gray-400">
-                                    {epNumber.length}/9
-                                </span>
                             </div>
                         </div>
 

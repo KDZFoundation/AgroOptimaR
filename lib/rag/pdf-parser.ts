@@ -1,6 +1,6 @@
 // @ts-ignore
 import * as pdf from 'pdf-parse'
-import { Anthropic } from 'anthropic'
+import Anthropic from '@anthropic-ai/sdk'
 import { removeNonPrintable, extractJsonFromResponse } from './text-utils'
 
 const anthropic = new Anthropic({
@@ -28,6 +28,7 @@ Twoim zadaniem jest dokładna ekstrakcja danych z tekstu wniosku do ustrukturyzo
 
 WYMAGANA STRUKTURA JSON:
 {
+  "kampania_rok": 2023,
   "podmiot": {
     "ep": "9-cyfrowy numer",
     "nazwa": "Nazwa gospodarstwa/rolnika",
@@ -53,7 +54,8 @@ ZASADY:
 1. EP: Numer Producenta musi mieć 9 cyfr.
 2. Powierzchnia: Zawsze jako liczba (float), nie tekst.
 3. Kody płatności: Wyciągnij kody takie jak JPO, uzupełniająca, ekoschematy (E_...).
-4. Jeśli dana wartość jest niepewna, pomiń ją lub zostaw null, nie zmyślaj danych.
+4. Kampania: Znajdź rok kampanii (np. 2024, 2025). Jeśli nie jest podany wprost, spróbuj wywnioskować z dat lub treści.
+5. Jeśli dana wartość jest niepewna, pomiń ją lub zostaw null, nie zmyślaj danych.
 
 Zwróć TYLKO i WYŁĄCZNIE obiekt JSON.`,
             messages: [

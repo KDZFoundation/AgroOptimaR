@@ -1,39 +1,94 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Card, Button, Badge, DataTable, Modal } from '@/components/ui'
-import { FileUp, FileText, CheckCircle2, AlertCircle, Clock, Trash2, Download, Eye, Cpu } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Card, Button, Badge, DataTable, Modal, type Column } from '@/components/ui'
+import { FileUp, FileText, CheckCircle2, Trash2, Download, Eye, Cpu, AlertTriangle } from 'lucide-react'
+import { uploadPdf, getWnioski } from '@/app/actions/upload-pdf'
 
-const MOCK_FILES = [
-    { id: '1', nazwa: 'wniosek_2025_001.pdf', data: '2026-02-18 10:15', status: 'sukces', kampania: 2025 },
-    { id: '2', nazwa: 'wniosek_2024_poprawa.pdf', data: '2026-02-15 14:30', status: 'sukces', kampania: 2024 },
-    { id: '3', nazwa: 'bledny_plik.pdf', data: '2026-02-10 09:00', status: 'blad', kampania: 2025 },
-]
+// Typy zdefiniowane w akcjach lub types/index.ts (uproszczone tutaj dla klienta)
+interface Wniosek {
+    id: string
+    nazwa_pliku: string
+    created_at: string
+    status_parsowania: string
+    kampania_rok: number
+    dane_json: any
+}
+
+const REQUIRED_YEARS = [2021, 2022, 2023, 2024, 2025]
 
 export default function WnioskiPdfPage() {
     const [isUploading, setIsUploading] = useState(false)
+    const [uploadError, setUploadError] = useState<string | null>(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [lastUploadResult, setLastUploadResult] = useState<any>(null)
+    const [wnioski, setWnioski] = useState<Wniosek[]>([])
+    const [isLoading, setIsLoading] = useState(true)
 
-    const columns = [
+    useEffect(() => {
+        fetchWnioski()
+    }, [])
+
+    const fetchWnioski = async () => {
+        setIsLoading(true)
+        const data = await getWnioski()
+        // @ts-ignore
+        setWnioski(data || [])
+        setIsLoading(false)
+    }
+
+    const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0]
+        if (!file) return
+
+        setIsUploading(true)
+        setUploadError(null)
+
+        const formData = new FormData()
+        formData.append('file', file)
+
+        const result = await uploadPdf(formData)
+
+        if (result.error) {
+            setUploadError(result.error)
+        } else {
+            setLastUploadResult(result)
+            setIsModalOpen(true)
+            fetchWnioski() // Odśwież listę
+        }
+        setIsUploading(false)
+        // Reset input
+        e.target.value = ''
+    }
+
+    // Helper to check missing years
+    const uploadedYears = new Set(wnioski.map(w => w.kampania_rok))
+    const missingYears = REQUIRED_YEARS.filter(year => !uploadedYears.has(year))
+    const hasRequired2025 = uploadedYears.has(2025)
+
+    const columns: Column<Wniosek>[] = [
         {
-            header: 'Nazwa pliku', accessor: (item: any) => (
+            header: 'Nazwa pliku', accessor: (item) => (
                 <div className="flex items-center gap-3">
                     <FileText className="w-5 h-5 text-gray-400" />
-                    <span className="font-bold text-text-primary">{item.nazwa}</span>
+                    <span className="font-bold text-text-primary">{item.nazwa_pliku}</span>
                 </div>
             )
         },
-        { header: 'Data przesłania', accessor: 'data' },
-        { header: 'Kampania', accessor: (item: any) => <Badge variant="neutral">{item.kampania}</Badge> },
         {
-            header: 'Status', accessor: (item: any) => (
-                <Badge variant={item.status === 'sukces' ? 'success' : 'error'}>
-                    {item.status.toUpperCase()}
+            header: 'Data przesłania',
+            accessor: (item) => new Date(item.created_at).toLocaleDateString('pl-PL')
+        },
+        { header: 'Kampania', accessor: (item) => <Badge variant="neutral">{item.kampania_rok}</Badge> },
+        {
+            header: 'Status', accessor: (item) => (
+                <Badge variant={item.status_parsowania === 'sukces' ? 'success' : 'error'}>
+                    {item.status_parsowania.toUpperCase()}
                 </Badge>
             )
         },
         {
-            header: 'Akcje', accessor: (item: any) => (
+            header: 'Akcje', accessor: (item) => (
                 <div className="flex items-center gap-2">
                     <Button variant="ghost" size="sm" icon={<Eye className="w-4 h-4" />} />
                     <Button variant="ghost" size="sm" icon={<Download className="w-4 h-4" />} />
@@ -43,14 +98,6 @@ export default function WnioskiPdfPage() {
         },
     ]
 
-    const handleUpload = () => {
-        setIsUploading(true)
-        setTimeout(() => {
-            setIsUploading(false)
-            setIsModalOpen(true)
-        }, 2000)
-    }
-
     return (
         <div className="space-y-8">
             <div className="flex justify-between items-center">
@@ -58,54 +105,90 @@ export default function WnioskiPdfPage() {
                     <h2 className="text-3xl font-bold text-text-primary">Wnioski PDF (RAG)</h2>
                     <p className="text-text-secondary mt-1">Prześlij wniosek z eWniosekPlus, aby automatycznie uzupełnić dane.</p>
                 </div>
-                <Button variant="gold" icon={<Cpu className="w-4 h-4" />}>Uruchom Analizę AI</Button>
+                <div className="flex flex-col items-end gap-2">
+                    {hasRequired2025 ? (
+                         <Button variant="gold" icon={<Cpu className="w-4 h-4" />}>Uruchom Symulację i Optymalizację</Button>
+                    ) : (
+                        <div className="text-sm text-error font-bold flex items-center gap-2">
+                             <AlertTriangle className="w-4 h-4" />
+                             Wymagany wniosek 2025
+                        </div>
+                    )}
+
+                    {hasRequired2025 && missingYears.length > 0 && (
+                        <div className="flex items-center gap-2 text-warning text-xs">
+                            <AlertTriangle className="w-3 h-3" />
+                            Zalecane uzupełnienie lat: {missingYears.join(', ')}
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* STATUS YEARS */}
+            <div className="grid grid-cols-5 gap-4">
+                {REQUIRED_YEARS.map(year => {
+                    const isDone = uploadedYears.has(year)
+                    return (
+                        <div key={year} className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-colors ${
+                            isDone ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-dashed border-gray-300'
+                        }`}>
+                            <span className={`text-xl font-bold ${isDone ? 'text-green-700' : 'text-gray-400'}`}>{year}</span>
+                            <span className="text-xs mt-1">
+                                {isDone ? <Badge variant="success">OK</Badge> : <Badge variant="neutral">BRAK</Badge>}
+                            </span>
+                        </div>
+                    )
+                })}
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* UPLOAD AREA */}
                 <div className="lg:col-span-1">
                     <Card title="Prześlij plik" icon={<FileUp />}>
-                        <div
-                            className={`border-2 border-dashed rounded-3xl p-8 text-center transition-all ${isUploading ? 'border-green-500 bg-green-50' : 'border-border-custom hover:border-green-500 hover:bg-green-50/10'
-                                }`}
-                        >
-                            {isUploading ? (
-                                <div className="space-y-4">
-                                    <div className="animate-spin w-10 h-10 border-4 border-green-600 border-t-transparent rounded-full mx-auto" />
-                                    <p className="text-sm font-bold text-green-700">Analizowanie dokumentu...</p>
-                                    <p className="text-xs text-text-secondary">Wyodrębnianie działek i ekoschematów przy użyciu Claude AI</p>
-                                </div>
-                            ) : (
-                                <>
-                                    <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 mx-auto mb-4">
-                                        <FileUp className="w-8 h-8" />
+                        <div className="relative">
+                             <input
+                                type="file"
+                                accept=".pdf"
+                                onChange={handleUpload}
+                                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                                disabled={isUploading}
+                            />
+                            <div
+                                className={`border-2 border-dashed rounded-3xl p-8 text-center transition-all ${isUploading ? 'border-green-500 bg-green-50' : 'border-border-custom hover:border-green-500 hover:bg-green-50/10'
+                                    }`}
+                            >
+                                {isUploading ? (
+                                    <div className="space-y-4">
+                                        <div className="animate-spin w-10 h-10 border-4 border-green-600 border-t-transparent rounded-full mx-auto" />
+                                        <p className="text-sm font-bold text-green-700">Analizowanie dokumentu...</p>
+                                        <p className="text-xs text-text-secondary">Wyodrębnianie działek i roku kampanii...</p>
                                     </div>
-                                    <h4 className="font-bold text-text-primary">Upuść plik tutaj</h4>
-                                    <p className="text-xs text-text-secondary mt-2 mb-6">Obsługiwane formaty: PDF (eWniosekPlus)</p>
-                                    <Button variant="primary" onClick={handleUpload} className="w-full">Wybierz z komputera</Button>
-                                </>
-                            )}
+                                ) : (
+                                    <>
+                                        <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 mx-auto mb-4">
+                                            <FileUp className="w-8 h-8" />
+                                        </div>
+                                        <h4 className="font-bold text-text-primary">Kliknij lub upuść plik</h4>
+                                        <p className="text-xs text-text-secondary mt-2 mb-6">Obsługiwane formaty: PDF (eWniosekPlus)</p>
+                                        <Button variant="primary" className="w-full pointer-events-none">Wybierz z komputera</Button>
+                                    </>
+                                )}
+                            </div>
                         </div>
 
+                        {uploadError && (
+                            <div className="mt-4 p-3 bg-red-50 text-red-600 text-sm rounded-lg flex items-center gap-2">
+                                <AlertTriangle className="w-4 h-4" />
+                                {uploadError}
+                            </div>
+                        )}
+
                         <div className="mt-6 p-4 bg-gray-50 rounded-2xl space-y-3">
-                            <h5 className="text-xs font-bold text-text-muted uppercase tracking-widest">Co wyodrębniamy?</h5>
+                            <h5 className="text-xs font-bold text-text-muted uppercase tracking-widest">Wymagane lata</h5>
                             <div className="space-y-2">
-                                <div className="flex items-center gap-2 text-xs text-text-secondary">
-                                    <CheckCircle2 className="w-3.5 h-3.5 text-success" />
-                                    Dane producenta (EP, adres)
-                                </div>
-                                <div className="flex items-center gap-2 text-xs text-text-secondary">
-                                    <CheckCircle2 className="w-3.5 h-3.5 text-success" />
-                                    Wykaz działek rolnych
-                                </div>
-                                <div className="flex items-center gap-2 text-xs text-text-secondary">
-                                    <CheckCircle2 className="w-3.5 h-3.5 text-success" />
-                                    Deklarowane ekoschematy
-                                </div>
-                                <div className="flex items-center gap-2 text-xs text-text-secondary">
-                                    <CheckCircle2 className="w-3.5 h-3.5 text-success" />
-                                    Liczba zwierząt (bydło, owce, kozy)
-                                </div>
+                                <p className="text-xs text-text-secondary leading-relaxed">
+                                    Aby algorytm mógł poprawnie wyliczyć średnią historyczną i zaproponować optymalne ekoschematy (np. wymieszanie słomy, międzyplony), system potrzebuje danych z 5 ostatnich kampanii.
+                                </p>
                             </div>
                         </div>
                     </Card>
@@ -114,7 +197,11 @@ export default function WnioskiPdfPage() {
                 {/* HISTORY TABLE */}
                 <div className="lg:col-span-2">
                     <Card title="Historia przesłanych plików" icon={<FileText />}>
-                        <DataTable data={MOCK_FILES} columns={columns} />
+                        {isLoading ? (
+                            <div className="p-8 text-center text-gray-400">Ładowanie historii...</div>
+                        ) : (
+                            <DataTable data={wnioski} columns={columns} />
+                        )}
                     </Card>
                 </div>
             </div>
@@ -123,40 +210,15 @@ export default function WnioskiPdfPage() {
             <Modal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                title="Dokument przeanalizowany"
-                footer={<Button variant="primary" onClick={() => setIsModalOpen(false)}>Zapisz dane w systemie</Button>}
+                title="Dokument pomyślnie dodany"
+                footer={<Button variant="primary" onClick={() => setIsModalOpen(false)}>Zamknij</Button>}
             >
                 <div className="space-y-6">
                     <div className="flex items-center gap-3 p-4 bg-green-50 rounded-2xl border border-green-100">
                         <CheckCircle2 className="w-6 h-6 text-success" />
                         <div>
-                            <p className="font-bold text-text-primary">Analiza zakończona sukcesem</p>
-                            <p className="text-xs text-text-secondary">Claude 3.5 Sonnet wykrył 12 działek i 3 ekoschematy.</p>
-                        </div>
-                    </div>
-
-                    <div className="space-y-3">
-                        <p className="text-sm font-bold text-text-primary">Wykryte dane:</p>
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="p-3 bg-gray-50 rounded-xl">
-                                <p className="text-[10px] text-text-muted uppercase font-bold">Liczba działek</p>
-                                <p className="text-lg font-bold text-text-primary">12 szt.</p>
-                            </div>
-                            <div className="p-3 bg-gray-50 rounded-xl">
-                                <p className="text-[10px] text-text-muted uppercase font-bold">Łączna pow.</p>
-                                <p className="text-lg font-bold text-text-primary">45.20 ha</p>
-                            </div>
-                            <div className="p-3 bg-gray-50 rounded-xl">
-                                <p className="text-[10px] text-text-muted uppercase font-bold">Ekoschematy</p>
-                                <div className="mt-1 flex flex-wrap gap-1">
-                                    <Badge variant="success">E_WSG</Badge>
-                                    <Badge variant="success">E_MPW</Badge>
-                                </div>
-                            </div>
-                            <div className="p-3 bg-gray-50 rounded-xl">
-                                <p className="text-[10px] text-text-muted uppercase font-bold">Zwierzęta</p>
-                                <p className="text-lg font-bold text-text-primary">14 DJP</p>
-                            </div>
+                            <p className="font-bold text-text-primary">Kampania {lastUploadResult?.year}</p>
+                            <p className="text-xs text-text-secondary">Plik został poprawnie przetworzony i przypisany do Twojego konta.</p>
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,10 @@ import {
     MessageSquare,
     AlertTriangle,
     CheckCircle,
-    TrendingUp
+    TrendingUp,
+    PieChart,
+    Leaf,
+    Sprout
 } from 'lucide-react'
 import Link from 'next/link'
 

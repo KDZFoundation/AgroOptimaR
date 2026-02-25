@@ -1,13 +1,18 @@
 export type KampaniaStatus = 'zakonczona' | 'w_toku' | 'robocza';
+export type AppRole = 'rolnik' | 'doradca' | 'admin';
 
-export interface Rolnik {
+export interface Profile {
     id: string;
-    numer_producenta: string;
-    imie: string;
-    nazwisko: string;
-    email: string;
+    role: AppRole;
+    imie: string | null;
+    nazwisko: string | null;
+    numer_producenta: string | null;
+    email?: string; // Optional, usually from auth
     created_at: string;
 }
+
+// Deprecated or alias for backward compatibility
+export type Rolnik = Profile;
 
 export interface Kampania {
     id: string;
