@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { parsePdfApplication } from '@/lib/rag/pdf-parser'
-
-const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
+import { ApplicationParser } from '@/lib/parsers'
+import { UploadFileSchema } from '@/lib/utils/validation'
 
 export async function POST(request: NextRequest) {
     try {
@@ -15,18 +14,12 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        // Walidacja typu pliku
-        if (!file.name.toLowerCase().endsWith('.pdf') && file.type !== 'application/pdf') {
+        // Validate file input (size, type) using Zod schema
+        const validation = UploadFileSchema.safeParse({ file })
+        if (!validation.success) {
+            const firstError = validation.error.issues[0];
             return NextResponse.json(
-                { error: 'Przesłany plik nie jest plikiem PDF.' },
-                { status: 400 }
-            )
-        }
-
-        // Walidacja rozmiaru
-        if (file.size > MAX_FILE_SIZE) {
-            return NextResponse.json(
-                { error: `Plik jest za duży. Maksymalny rozmiar: ${MAX_FILE_SIZE / 1024 / 1024}MB.` },
+                { error: firstError.message },
                 { status: 400 }
             )
         }
@@ -35,8 +28,9 @@ export async function POST(request: NextRequest) {
         const arrayBuffer = await file.arrayBuffer()
         const buffer = Buffer.from(arrayBuffer)
 
-        // Parsowanie PDF z AI
-        const parsedData = await parsePdfApplication(buffer)
+        // Parsowanie PDF z AI / Regex strategy
+        const parser = new ApplicationParser()
+        const parsedData = await parser.parse(buffer)
 
         return NextResponse.json({
             success: true,
