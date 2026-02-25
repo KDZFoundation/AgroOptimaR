@@ -87,7 +87,7 @@ export async function uploadPdf(formData: FormData) {
         }
 
         revalidatePath('/wnioski-pdf')
-        return { success: true, year: campaignYear }
+        return { success: true, year: campaignYear, dane: parsedData }
     } catch (error: any) {
         console.error('Process error:', error)
         return { error: error.message || 'An unexpected error occurred' }
@@ -109,7 +109,7 @@ export async function getWnioski() {
                         cookiesToSet.forEach(({ name, value, options }) =>
                             cookieStore.set(name, value, options)
                         )
-                    } catch {}
+                    } catch { }
                 },
             },
         }

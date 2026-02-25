@@ -2,12 +2,14 @@
 
 import React, { useState, Suspense } from 'react'
 import { Card, Tabs, DataTable, Button, Badge, Modal, type Column } from '@/components/ui'
+
 import { Plus, Settings, Map, Coins, Sprout, ShieldCheck } from 'lucide-react'
 import { useSearchParams, useRouter } from 'next/navigation'
 
 export default function PanelRolnikaPage() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div className="animate-pulse p-8 text-center text-text-secondary">Ładowanie...</div>}>
+
             <PanelRolnikaContent />
         </Suspense>
     )
