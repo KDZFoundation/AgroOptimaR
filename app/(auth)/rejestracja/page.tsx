@@ -37,16 +37,14 @@ export default function RejestracjaPage() {
             return
         }
 
-        // Dla potrzeb Demo logujemy się email/hasło
-        // W rzeczywistości EP byłoby sprawdzane pod kątem unikalności w bazie
-        const { data: { user }, error: authError } = await supabase.auth.signUp({
+        const { data: { user, session }, error: authError } = await supabase.auth.signUp({
             email: formData.email,
             password: formData.pass,
             options: {
                 data: {
-                    imie: formData.imie,
-                    nazwisko: formData.nazwisko,
-                    numer_producenta: formData.ep,
+                    first_name: formData.imie,
+                    last_name: formData.nazwisko,
+                    numer_producenta: formData.ep, // Store in metadata as well
                 },
             },
         })
@@ -55,24 +53,24 @@ export default function RejestracjaPage() {
             setError(authError.message)
             setLoading(false)
         } else if (user) {
-            // Zapis do tabeli publicznej rolnicy
-            const { error: dbError } = await supabase
-                .from('rolnicy')
-                .insert({
-                    id: user.id,
-                    numer_producenta: formData.ep,
-                    imie: formData.imie,
-                    nazwisko: formData.nazwisko,
-                    email: formData.email,
-                })
+            // Try to update profile with specific fields if session exists
+            if (session) {
+                const { error: profileError } = await supabase
+                    .from('profiles')
+                    .update({
+                        numer_producenta: formData.ep,
+                        // imie/nazwisko are handled by trigger from metadata
+                    })
+                    .eq('id', user.id)
 
-            if (dbError && dbError.code !== '23505') { // Ignoruj jeśli już istnieje
-                setError('Błąd podczas zapisywania profilu rolnika.')
-                setLoading(false)
-            } else {
-                setSuccess(true)
-                setTimeout(() => router.push('/login'), 3000)
+                if (profileError) {
+                    console.error('Profile update error:', profileError)
+                    // Continue anyway, as the account is created
+                }
             }
+
+            setSuccess(true)
+            setTimeout(() => router.push('/login'), 3000)
         }
     }
 
