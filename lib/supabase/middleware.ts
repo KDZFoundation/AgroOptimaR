@@ -72,5 +72,21 @@ export async function updateSession(request: NextRequest) {
         return NextResponse.redirect(new URL('/pulpit', request.url))
     }
 
+    // Ochrona tras admina
+    if (user && request.nextUrl.pathname.startsWith('/admin')) {
+         const { data: profile } = await supabase
+            .from('profiles')
+            .select('role')
+            .eq('id', user.id)
+            .single()
+
+         // Jeśli nie ma profilu lub rola nie jest admin, przekieruj
+         // W rzeczywistości warto to cachować lub trzymać w metadanych użytkownika (custom claims)
+         // dla wydajności, ale na start zapytanie DB wystarczy.
+         if (!profile || profile.role !== 'admin') {
+             return NextResponse.redirect(new URL('/pulpit', request.url))
+         }
+    }
+
     return response
 }
