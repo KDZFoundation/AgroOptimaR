@@ -1,9 +1,14 @@
+
 'use server'
 
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { parsePdfApplication } from '@/lib/rag/pdf-parser'
 import { revalidatePath } from 'next/cache'
+
+import { StorageService } from '@/lib/services/storage'
+import { DatabaseService } from '@/lib/services/database'
+import { ApplicationParser } from '@/lib/parsers' // index.ts exports ApplicationParser class
+import { UploadFileSchema } from '@/lib/utils/validation'
 
 export async function uploadPdf(formData: FormData) {
     const cookieStore = await cookies()
@@ -21,9 +26,7 @@ export async function uploadPdf(formData: FormData) {
                             cookieStore.set(name, value, options)
                         )
                     } catch {
-                        // The `setAll` method was called from a Server Component.
-                        // This can be ignored if you have middleware refreshing
-                        // user sessions.
+                        // Ignored
                     }
                 },
             },
@@ -35,59 +38,53 @@ export async function uploadPdf(formData: FormData) {
         return { error: 'No file provided' }
     }
 
+    // Validate file input (size, type)
+    const validation = UploadFileSchema.safeParse({ file })
+    if (!validation.success) {
+        // Use .issues property directly
+        const firstError = validation.error.issues[0];
+        return { error: firstError.message }
+    }
+
     // 1. Authenticate user
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
         return { error: 'Unauthorized' }
     }
 
-    // 2. Validate file type
-    if (file.type !== 'application/pdf') {
-        return { error: 'Only PDF files are allowed' }
-    }
-
     try {
         const buffer = Buffer.from(await file.arrayBuffer())
 
-        // 3. Parse PDF to get metadata (especially Campaign Year)
-        const parsedData = await parsePdfApplication(buffer)
-        const campaignYear = parsedData?.kampania_rok
+        // Initialize Services
+        // Ideally dependency injection, but here we construct them with the request-scoped dependencies
+        const parser = new ApplicationParser()
+        const storageService = new StorageService(supabase)
+        const dbService = new DatabaseService(supabase)
+
+        // 3. Parse PDF
+        const parsedData = await parser.parse(buffer)
+        const campaignYear = parsedData.kampania_rok
 
         if (!campaignYear) {
             return { error: 'Nie udało się odczytać roku kampanii z pliku.' }
         }
 
-        // 4. Upload to Supabase Storage
-        const fileName = `${user.id}/${campaignYear}_${Date.now()}_${file.name}`
-        const { data: uploadData, error: uploadError } = await supabase
-            .storage
-            .from('wnioski')
-            .upload(fileName, file)
+        // 4. Upload to Storage
+        const filePath = await storageService.uploadPdf(file, user.id, campaignYear)
 
-        if (uploadError) {
-            console.error('Upload error:', uploadError)
-            return { error: 'Failed to upload file to storage' }
-        }
-
-        // 5. Save metadata to Database
-        const { error: dbError } = await supabase
-            .from('wnioski_pdf')
-            .insert({
-                rolnik_id: user.id,
-                kampania_rok: campaignYear,
-                nazwa_pliku: file.name,
-                plik_url: uploadData.path,
-                status_parsowania: parsedData ? 'sukces' : 'blad',
-                dane_json: parsedData || {},
-            })
-
-        if (dbError) {
-            console.error('Database error:', dbError)
-            return { error: 'Failed to save application metadata' }
-        }
+        // 5. Save Metadata
+        await dbService.createWniosek({
+            rolnik_id: user.id,
+            kampania_rok: campaignYear,
+            nazwa_pliku: file.name,
+            plik_url: filePath,
+            status_parsowania: parsedData ? 'sukces' : 'blad',
+            dane_json: parsedData || {},
+        })
 
         revalidatePath('/wnioski-pdf')
         return { success: true, year: campaignYear, dane: parsedData }
+
     } catch (error: any) {
         console.error('Process error:', error)
         return { error: error.message || 'An unexpected error occurred' }
@@ -118,16 +115,12 @@ export async function getWnioski() {
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return []
 
-    const { data, error } = await supabase
-        .from('wnioski_pdf')
-        .select('*')
-        .eq('rolnik_id', user.id)
-        .order('kampania_rok', { ascending: false })
-
-    if (error) {
-        console.error('Fetch error:', error)
+    // Use Service logic for consistency
+    const dbService = new DatabaseService(supabase)
+    try {
+        return await dbService.getWnioskiByUserId(user.id)
+    } catch (error) {
+        console.error('getWnioski error:', error)
         return []
     }
-
-    return data
 }
