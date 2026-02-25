@@ -57,6 +57,7 @@ export interface WniosekPDF {
     rolnik_id: string;
     kampania_rok: number;
     nazwa_pliku: string;
+    plik_url: string;
     status_parsowania: 'oczekujacy' | 'sukces' | 'blad';
     dane_json: any;
     created_at: string;
@@ -78,4 +79,30 @@ export interface RolnictwoWeglowePunktacja {
     praktyka_kod: string;
     powierzchnia_ha: number;
     punkty: number;
+}
+
+// Parsed data types (moved from lib/rag/pdf-parser.ts)
+export interface ParsedDzialka {
+    nr_dzialki: string
+    pow_dzialki_ha: number
+    uprawa: string
+    kod_uprawy: string
+    platnosci: string[]
+}
+
+export interface ParsedPodmiot {
+    ep: string
+    nazwa: string
+    adres: string
+}
+
+export interface ParsedWniosek {
+    kampania_rok?: number
+    podmiot: ParsedPodmiot
+    dzialki: ParsedDzialka[]
+    ekoschematy_ogolne: string[]
+    podsumowanie: {
+        liczba_dzialek: number
+        calkowita_powierzchnia_ha: number
+    }
 }
