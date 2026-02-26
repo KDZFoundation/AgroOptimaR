@@ -19,6 +19,9 @@ const AREA_PAYMENTS_REGEX = /^(\d+\s+\d+)\s+([A-Z_,\s]+)$/;
 /** Numer EP (9 cyfr) */
 const EP_REGEX = /\b(\d{9})\b/;
 
+/** Application Number Pattern: EP-TYPE-YY-SEQ (e.g., 069630174-PLA-25-0001) */
+const APPLICATION_NUMBER_REGEX = /(\d{9})-[A-Z]{3}-(\d{2})-\d{4}/;
+
 /** Ekoschematy (E_XXX) */
 const ECOSCHEME_REGEX = /\bE_[A-Z]{2,5}\b/g;
 
@@ -31,7 +34,8 @@ export class RegexApplicationParser {
     public parse(text: string): ParsedWniosek {
         const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
 
-        const podmiot = this.extractPodmiot(lines);
+        const { year, epFromAppNum } = this.extractApplicationMetadata(text);
+        const podmiot = this.extractPodmiot(lines, epFromAppNum);
         const cropMap = this.buildCropMap(lines);
         const dzialki = this.extractDzialki(lines, cropMap);
         const ekoschematy = this.extractEkoschematy(text);
@@ -39,6 +43,7 @@ export class RegexApplicationParser {
         const calkowitaPowierzchnia = dzialki.reduce((sum, d) => sum + d.pow_dzialki_ha, 0);
 
         return {
+            kampania_rok: year,
             podmiot,
             dzialki,
             ekoschematy_ogolne: ekoschematy,
@@ -49,15 +54,27 @@ export class RegexApplicationParser {
         };
     }
 
-    private extractPodmiot(lines: string[]): ParsedPodmiot {
-        let ep = '';
+    private extractApplicationMetadata(text: string): { year?: number, epFromAppNum?: string } {
+        const match = text.match(APPLICATION_NUMBER_REGEX);
+        if (match) {
+            const ep = match[1];
+            const yearShort = parseInt(match[2], 10);
+            // Assume 20xx for year 25 -> 2025
+            const year = 2000 + yearShort;
+            return { year, epFromAppNum: ep };
+        }
+        return {};
+    }
+
+    private extractPodmiot(lines: string[], epOverride?: string): ParsedPodmiot {
+        let ep = epOverride || '';
         let nazwa = '';
         let adres = '';
 
         for (let i = 0; i < Math.min(lines.length, 100); i++) {
             const line = lines[i];
 
-            // Szukaj 9-cyfrowego numeru EP
+            // Szukaj 9-cyfrowego numeru EP if not already found
             if (!ep) {
                 const epMatch = line.match(EP_REGEX);
                 if (epMatch) {

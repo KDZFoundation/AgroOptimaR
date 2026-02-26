@@ -1,0 +1,464 @@
+
+
+Agencja Restrukturyzacji i Modernizacji Rolnictwa
+Symbol formularza: W-3/1001
+I. CEL ZŁOŻENIA
+WniosekZmiana do wnioskuWycofanie wniosku
+V. DANE IDENTYFIKACYJNE PRZEJMUJĄCEGO ALBO NABYWCY ALBO SPADKOBIERCY ALBO ZAPISOBIERCY
+    WINDYKACYJNEGO
+
+ALBO NASTĘPCY PRAWNEGO
+III. DANE IDENTYFIKACYJNE PRZEKAZUJĄCEGO ALBO ZBYWCY ALBO SPADKODAWCY ALBO ROLNIKA
+II. NUMER IDENTYFIKACYJNY PRZEKAZUJĄCEGO ALBO ZBYWCY ALBO SPADKODAWCY
+    ALBO ROLNIKA
+IV. NUMER IDENTYFIKACYJNY
+
+PRZEJMUJĄCEGO ALBO NABYWCY ALBO SPADKOBIERCY
+     ALBO ZAPISOBIERCY WINDYKACYJNEGO ALBO NASTĘPCY PRAWNEGO
+1/5
+
+
+
+
+......................................................................................
+Znak sprawy OB
+......................................................................................
+Numer dokumentu
+..............................................................................
+   Znak sprawy ONW
+WNIOSEK O PRZYZNANIE PŁATNOŚCI NA ROK
+w przypadku:
+śmierci rolnika
+przekazania gospodarstwa rolnego
+następstwa prawnego
+nabycia gospodarstwa rolnego
+03. Nazwisko / Nazwa pełna
+04. Pierwsze imię / Nazwa skrócona
+01. Nazwisko / Nazwa pełna
+02. Pierwsze imię / Nazwa skrócona
+07. Wnioskuję o przyznanie płatności w ramach:
+VII. PŁATNOŚCI
+INTERWENCJI W FORMIE PŁATNOŚCI BEZPOŚREDNICH:
+Ekstensywne użytkowanie TUZ z obsadą zwierząt (E_EKSTUZ)Ekstensywne użytkowanie TUZ z obsadą zwierząt (E_EKSTUZ)
+Międzyplony ozime/wsiewki śródplonowe (E_MPW)Międzyplony ozime/wsiewki śródplonowe (E_MPW)
+Opracowanie i przestrzeganie planu nawożenia (E_OPN)Opracowanie i przestrzeganie planu nawożenia (E_OPN)
+Płatności dla młodych rolników (MRO)
+Prowadzenie produkcji roślinnej w systemie Integrowanej Produkcji Roślin (E_IPR)Prowadzenie produkcji roślinnej w systemie Integrowanej Produkcji Roślin (E_IPR)
+Zróżnicowana struktura upraw (E_ZSU)
+Stosowanie płynnych nawozów naturalnych innymi metodami niż rozbryzgowo (E_PN)
+Uproszczone systemy uprawy (E_USU)
+Wymieszanie słomy z glebą (E_WSG)
+Podstawowego wsparcia dochodów (PWD) i płatności redystrybucyjnej (RED)
+Schematów na rzecz klimatu, środowiska i dobrostanu zwierząt (ekoschematów):
+Obszary z roślinami miododajnymi (E_MIOD)
+Rolnictwo węglowe i zarządzanie składnikami odżywczymi
+Wymieszanie obornika z glebą na gruntach ornych w ciągu 12 godzin (E_OBR)
+06. Oświadczam, że jestem rolnikiem aktywnym zawodowo, pomimo że:
+VI. ROLNIK AKTYWNY ZAWODOWO
+zarządzam portami  lotniczymi, administruję wodociągami  lub  stałymi  terenami  sportowymi  lub  rekreacyjnymi  lub  świadczę usługi przewozu
+kolejowego lub usługi w zakresie obrotu nieruchomościami.
+jestem powiązany z podmiotem prowadzącym jedną z powyższych działalności.
+Numer kontrolny z Potwierdzenia przyjęcia dokumentu
+Biologiczna ochrona upraw (E_BOU)
+Retencjonowanie wody na trwałych użytkach zielonych (E_RET)
+05.          Ubiegam się o przyznanie płatności jako spółdzielnia i wnioskuję o przyznanie tych płatności z uwzględnieniem liczby członków spółdzielni
+
+2/5
+Dobrostan zwierzątDobrostan zwierząt
+stosowanie praktyk/i:stosowanie praktyk/i:
+przyznanie kosztów transakcyjnych
+Dobrostan tucznikówDobrostan tuczników
+produkcja w cyklu zamkniętym
+stosowanie praktyk/i:stosowanie praktyk/i:
+Dobrostan krów mlecznych
+przyznanie kosztów transakcyjnych
+utrzymywanie krów mlecznych zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie krów mlecznych zgodnie z systemem rolnictwa ekologicznego
+Dobrostan krów mamek
+zwierzęta utrzymywane w budynkach/pomieszczeniach na uwięzi:
+stosowanie praktyk/i:stosowanie praktyk/i:
+zwierzęta utrzymywane w budynkach/pomieszczeniach bez uwięzi:
+Dobrostan opasówDobrostan opasów
+stosowanie praktyk/i:stosowanie praktyk/i:stosowanie praktyk/i:
+przyznanie kosztów transakcyjnych
+utrzymywanie krów mamek zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie krów mamek zgodnie z systemem rolnictwa ekologicznego
+zwierzęta utrzymywane w pomieszczeniach/budynkach na uwięzi:
+zwierzęta utrzymywane w systemie otwartym:zwierzęta utrzymywane w systemie otwartym:
+przyznanie kosztów transakcyjnych
+utrzymywanie opasów zgodnie z systemem rolnictwa ekologicznego
+zwierzęta utrzymywane w pomieszczeniach/budynkach bez uwięzi:
+stosowanie praktyk/i:stosowanie praktyk/i:stosowanie praktyk/i:
+wypaswypas ściółka ściółka ściółkawypas ściółka
+Dobrostan owiecDobrostan owiec
+przyznanie kosztów transakcyjnych
+utrzymywanie owiec zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie owiec zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie owiec zgodnie z systemem rolnictwa ekologicznego
+Dobrostan owiec
+przyznanie kosztów transakcyjnych
+utrzymywanie owiec zgodnie z systemem rolnictwa ekologicznego
+Dobrostan kur niosekDobrostan kur niosek
+przyznanie kosztów transakcyjnych
+utrzymywanie kur niosek zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie kur niosek zgodnie z systemem rolnictwa ekologicznego
+Dobrostan kózDobrostan kóz
+przyznanie kosztów transakcyjnych
+utrzymywanie kóz zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie kóz zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie kóz zgodnie z systemem rolnictwa ekologicznego
+Dobrostan kóz
+przyznanie kosztów transakcyjnych
+utrzymywanie kóz zgodnie z systemem rolnictwa ekologicznego
+Dobrostan koniDobrostan koni
+przyznanie kosztów transakcyjnych
+utrzymywanie koni zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie koni zgodnie z systemem rolnictwa ekologicznego
+system otwarty
+zwiększona powierzchnia bytowa w pomieszczeniach/budynkach
+system otwarty
+zwiększona powierzchnia bytowa w pomieszczeniach/budynkach
+Dobrostan indyków utrzymywanych z przeznaczeniem na produkcję mięsaDobrostan indyków utrzymywanych z przeznaczeniem na produkcję mięsa
+przyznanie kosztów transakcyjnych
+utrzymywanie indyków zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie indyków zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie indyków zgodnie z systemem rolnictwa ekologicznego
+Dobrostan indyków utrzymywanych z przeznaczeniem na produkcję mięsa
+przyznanie kosztów transakcyjnych
+utrzymywanie indyków zgodnie z systemem rolnictwa ekologicznego
+Dobrostan kurcząt brojlerówDobrostan kurcząt brojlerów
+późniejsze odsadzanie prosiątpóźniejsze odsadzanie prosiątpóźniejsze odsadzanie prosiąt
+ściółkaściółkaściółkaściółka
+zwiększona powierzchnia bytowa >20%zwiększona powierzchnia bytowa >20%
+zwiększona powierzchnia bytowa >50%zwiększona powierzchnia bytowa >50%
+stosowanie praktyk/i:
+wypaswypas
+ ściółka ściółka ściółka
+wypas
+ ściółka
+zwiększona powierzchnia bytowa >20%zwiększona powierzchnia bytowa >20%zwiększona powierzchnia bytowa >20%
+stosowanie praktyk/i:stosowanie praktyk/i:stosowanie praktyk/i:
+zwiększona powierzchnia bytowa >20%zwiększona powierzchnia bytowa >20%
+zwiększona powierzchnia bytowa >50%
+stosowanie praktyk/i:
+zwiększona powierzchnia bytowa >20%
+zwiększona powierzchnia bytowa >50%
+stosowanie praktyk/i:stosowanie praktyk/i:stosowanie praktyk/i:
+zwiększona powierzchnia bytowa >20%zwiększona powierzchnia bytowa >20%
+stosowanie praktyk/i:
+zwiększona powierzchnia bytowa >20%
+zwierzęta utrzymywane w pomieszczeniach/budynkach bez uwięzi:zwierzęta utrzymywane w pomieszczeniach/budynkach bez uwięzi:
+późniejsze odsadzanie cielątpóźniejsze odsadzanie cieląt
+ściółkaściółkawybiegwybieg
+zwiększona powierzchnia bytowa >50%zwiększona powierzchnia bytowa >50%
+Dobrostan lochDobrostan loch
+przyznanie kosztów transakcyjnychprzyznanie kosztów transakcyjnych
+utrzymywanie loch zgodnie z systemem rolnictwa ekologicznego utrzymywanie loch zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie loch zgodnie z systemem rolnictwa ekologicznego
+ściółkaściółka
+zwiększona powierzchnia bytowa >20%zwiększona powierzchnia bytowa >20%
+zwiększona powierzchnia bytowa >50%zwiększona powierzchnia bytowa >50%
+zwiększona powierzchnia bytowa >20%
+zwiększona powierzchnia bytowa >50%
+utrzymywanie tuczników zgodnie z systemem rolnictwa ekologicznego utrzymywanie tuczników zgodnie z systemem rolnictwa ekologicznego
+wypaswypas
+ściółka
+wybieg
+wypas
+ściółka
+wybieg
+wypaswypas
+zwiększona powierzchnia bytowa >20%zwiększona powierzchnia bytowa >20%
+ściółkaściółkaściółkaściółkawybiegwybiegwypaswypaswypas
+zwierzęta utrzymywane w pomieszczeniach/budynkach na uwięzi:zwierzęta utrzymywane w pomieszczeniach/budynkach na uwięzi:
+wypaswypaswypaswybiegwybiegściółkaściółkaściółkaściółka
+późniejsze odsadzanie cielątpóźniejsze odsadzanie cieląt
+przyznanie kosztów transakcyjnych
+utrzymywanie kurcząt brojlerów zgodnie z systemem rolnictwa ekologicznego
+przyznanie kosztów transakcyjnych
+utrzymywanie kurcząt brojlerów zgodnie z systemem rolnictwa ekologicznego
+zwiększona powierzchnia bytowa >50%zwiększona powierzchnia bytowa >50%
+wybiegwybieg
+wybiegwybieg
+
+X. INFORMACJA O ZAŁĄCZNIKACH
+VIII. PŁATNOŚĆ DLA MŁODYCH ROLNIKÓW
+Liczba załączników
+3/5
+PŁATNOŚCI NA RZECZ ROZWOJU OBSZARÓW WIEJSKICH
+Płatności niezwiązanej do tytoniu (TYTOŃ)
+PRZEJŚCIOWEGO WSPARCIA KRAJOWEGO:
+Uzupełniającej płatności podstawowej (UPP)
+Wsparcia dochodów związanego z produkcją do ziemniaków skrobiowych (P skrobia)
+Wsparcia dochodów związanego z produkcją do roślin strączkowych na nasiona (P STR)
+Wsparcia dochodów związanego z produkcją do roślin pastewnych (P PAS)
+Kopia wniosku o stwierdzenie nabycia spadku albo zaświadczenie sądu o zarejestrowaniu wniosku o stwierdzenie nabycia spadku
+
+
+Prawomocne postanowienie sądu o stwierdzeniu nabycia spadku
+Oświadczenie współspadkobiercy/współzapisobiercy windykacyjnego o wyrażeniu zgody na przyznanie płatności bezpośrednich/płatności
+ONW spadkobiercy
+11. Do wniosku składanego w przypadku śmierci rolnika:
+Zarejestrowany akt poświadczenia dziedziczenia sporządzony przez notariusza
+Oświadczenie spadkobierców/zapisobierców windykacyjnych/nabywców/posiadaczy przekazanego gospodarstwa o wyrażeniu zgody na
+przyznanie rolnikowi płatności niezwiązanej do tytoniu
+Prawomocne postanowienie częściowe sądu o stwierdzeniu nabycia przedmiotu zapisu windykacyjnego
+Kopie stron nowego planu poprawy dobrostanu zwierząt
+Dokumenty wymagane przy realizacji ekoschematu Dobrostan zwierząt:
+.......................................................
+.......................................................
+.......................................................
+Inne załączniki: ...............................................................................................................................................Inne załączniki: ...............................................................................................................................................
+Kopia wniosku o stwierdzenie nabycia spadku albo zaświadczenie sądu o zarejestrowaniu wniosku o stwierdzenie nabycia spadku
+
+
+Prawomocne postanowienie sądu o stwierdzeniu nabycia spadku
+Oświadczenie współspadkobiercy/współzapisobiercy windykacyjnego o wyrażeniu zgody na przyznanie płatności bezpośrednich/płatności
+ONW spadkobiercy
+11. Do wniosku składanego w przypadku śmierci rolnika:
+Zarejestrowany akt poświadczenia dziedziczenia sporządzony przez notariusza
+Oświadczenie spadkobierców/zapisobierców windykacyjnych/nabywców/posiadaczy przekazanego gospodarstwa o wyrażeniu zgody na
+przyznanie rolnikowi płatności niezwiązanej do tytoniu
+Prawomocne postanowienie częściowe sądu o stwierdzeniu nabycia przedmiotu zapisu windykacyjnego
+Kopie stron nowego planu poprawy dobrostanu zwierząt
+Dokumenty wymagane przy realizacji ekoschematu Dobrostan zwierząt:
+.......................................................
+.......................................................
+.......................................................
+Inne załączniki: ...............................................................................................................................................
+Umowa/kopia  umowy,  na  podstawie  której  grunty  wchodzące  w  skład  gospodarstwa  rolnego  oraz  zwierzęta  zostały  przekazane,
+poświadczona za zgodność z oryginałem przez notariusza albo upoważnionego pracownika ARiMR
+Oświadczenie spadkobierców/zapisobierców windykacyjnych/nabywców/posiadaczy przekazanego gospodarstwa o wyrażeniu zgody na
+przyznanie rolnikowi płatności niezwiązanej do tytoniu
+Oświadczenie zbywcy o wyrażeniu zgody na przyznanie płatności niezwiązanej do tytoniu
+Kopie stron nowego planu poprawy dobrostanu zwierząt
+Dokumenty wymagane przy realizacji ekoschematu Dobrostan zwierząt:
+.......................................................
+.......................................................
+.......................................................
+10. Do wniosku składanego w przypadku przekazania gospodarstwa rolnego/nabycia gospodarstwa rolnego:
+Inne załączniki: ...............................................................................................................................................
+Umowa/kopia  umowy,  na  podstawie  której  grunty  wchodzące  w  skład  gospodarstwa  rolnego  oraz  zwierzęta  zostały  przekazane,
+poświadczona za zgodność z oryginałem przez notariusza albo upoważnionego pracownika ARiMR
+Oświadczenie spadkobierców/zapisobierców windykacyjnych/nabywców/posiadaczy przekazanego gospodarstwa o wyrażeniu zgody na
+przyznanie rolnikowi płatności niezwiązanej do tytoniu
+Oświadczenie zbywcy o wyrażeniu zgody na przyznanie płatności niezwiązanej do tytoniu
+Kopie stron nowego planu poprawy dobrostanu zwierząt
+Dokumenty wymagane przy realizacji ekoschematu Dobrostan zwierząt:
+.......................................................
+.......................................................
+.......................................................
+10. Do wniosku składanego w przypadku przekazania gospodarstwa rolnego/nabycia gospodarstwa rolnego:
+Inne załączniki: ...............................................................................................................................................
+IX. DATA ZDARZENIA
+09. Data przekazania gospodarstwa rolnego
+      Data nabycia gospodarstwa rolnego
+      Data śmierci spadkodawcy
+      Data zdarzenia prawnego, w wyniku którego zaistniało następstwo prawne
+(dzień - miesiąc - rok)
+IX. DATA ZDARZENIA
+09. Data przekazania gospodarstwa rolnego
+      Data nabycia gospodarstwa rolnego
+      Data śmierci spadkodawcy
+      Data zdarzenia prawnego, w wyniku którego zaistniało następstwo prawne
+(dzień - miesiąc - rok)
+08. Oświadczam, że:
+samodzielnie prowadzę gospodarstwo rolne,
+faktyczną i trwałą kontrolę nad grupą osób, w tym nad spółką cywilną lub jednostką organizacyjną nieposiadającą osobowości prawnej, sprawują
+samodzielnie  lub wspólnie  z  innymi  rolnikami  (którym  nadano numer  identyfikacyjny) osoby wskazane w  oświadczeniu  o osobach  sprawujących
+faktyczną i trwałą kontrolę nad grupą osób.
+faktyczną i trwałą kontrolę nad grupą osób, w tym nad spółką cywilną lub jednostką organizacyjną nieposiadającą osobowości prawnej, sprawują
+samodzielnie  lub wspólnie  z  innymi  rolnikami  (którym  nadano numer  identyfikacyjny) osoby wskazane w  oświadczeniu  o osobach  sprawujących
+faktyczną i trwałą kontrolę nad grupą osób.
+
+08. Oświadczam, że:
+samodzielnie prowadzę gospodarstwo rolne,
+faktyczną i trwałą kontrolę nad grupą osób, w tym nad spółką cywilną lub jednostką organizacyjną nieposiadającą osobowości prawnej, sprawują
+samodzielnie  lub wspólnie  z  innymi  rolnikami  (którym  nadano numer  identyfikacyjny) osoby wskazane w  oświadczeniu  o osobach  sprawujących
+faktyczną i trwałą kontrolę nad grupą osób.
+
+Płatności dla obszarów z ograniczeniami naturalnymi lub innymi szczególnymi ograniczeniami (ONW)Płatności dla obszarów z ograniczeniami naturalnymi lub innymi szczególnymi ograniczeniami (ONW)
+faktyczną i trwałą kontrolę nad osobą prawną sprawują osoby wskazane w oświadczeniu o osobach sprawujących faktyczną i trwałą kontrolę nad osobą
+prawną,
+faktyczną i trwałą kontrolę nad osobą prawną sprawują osoby wskazane w oświadczeniu o osobach sprawujących faktyczną i trwałą kontrolę nad osobą
+prawną,
+faktyczną i trwałą kontrolę nad osobą prawną sprawują osoby wskazane w oświadczeniu o osobach sprawujących faktyczną i trwałą kontrolę nad osobą
+prawną,
+pozostaję w związku małżeńskim i razem prowadzimy gospodarstwo rolne,
+Wsparcia dochodów związanego z produkcją do bydła
+Wsparcia dochodów związanego z produkcją do krów
+Wsparcia dochodów związanego z produkcją do owiec
+Wsparcia dochodów związanego z produkcją do buraków cukrowych (P burak cukrowy)
+Wsparcia dochodów związanego z produkcją do kóz
+Wsparcia dochodów związanego z produkcją do chmielu (P chmiel)
+Wsparcia dochodów związanego z produkcją do konopi włóknistych (P konopie)
+Wsparcia dochodów związanego z produkcją do lnu (P len)
+Wsparcia dochodów związanego z produkcją do pomidorów (P pomidory)
+Wsparcia dochodów związanego z produkcją do truskawek (P truskawka)
+Wsparcia dochodów związanego z produkcją do bydła
+Wsparcia dochodów związanego z produkcją do krów
+Wsparcia dochodów związanego z produkcją do owiec
+Wsparcia dochodów związanego z produkcją do buraków cukrowych (P burak cukrowy)
+Wsparcia dochodów związanego z produkcją do kóz
+Wsparcia dochodów związanego z produkcją do chmielu (P chmiel)
+Wsparcia dochodów związanego z produkcją do konopi włóknistych (P konopie)
+Wsparcia dochodów związanego z produkcją do lnu (P len)
+Wsparcia dochodów związanego z produkcją do pomidorów (P pomidory)
+Wsparcia dochodów związanego z produkcją do truskawek (P truskawka)
+
+4/5
+XI. OŚWIADCZENIA I ZOBOWIĄZANIA
+Oświadczam, że:
+1) znane mi są skutki składania fałszywych oświadczeń wynikających z art. 297 § 1 i § 2 Kodeksu karnego;
+2) znane mi są zasady przyznawania płatności objętych wnioskiem o przyznanie płatności;
+3) nie  stwarzam  sztucznych  warunków,  o  których  mowa  w  art.  62  rozporządzenia  (UE) nr 2021/2116  w celu  uzyskania  żadnych korzyści  wynikających
+z prawodawstwa rolnego;
+4) nie  podlegam  zakazowi dostępu do środków publicznych, o których mowa w art. 5 ust. 3 pkt 4 ustawy z dnia 27 sierpnia 2009 r. o finansach publicznych (Dz.
+U. z 2022 r. poz. 1634, z późn. zm) na podstawie prawomocnego orzeczenia sądu;
+5) zostałem poinformowany, że obowiązek podania danych wynika z przepisów o krajowym systemie ewidencji producentów, ewidencji gospodarstw rolnych oraz
+ewidencji wniosków o przyznanie płatności,
+6) przyjmuje do wiadomości, że dane beneficjenta mogą być przetwarzane przez organy audytowe i dochodzeniowe Unii Europejskiej i państw członkowskich dla
+zabezpieczenia interesów finansowych Unii;
+7) przyjmuję  do  wiadomości,  że  informacja  o  przyznaniu  wnioskodawcy  pomocy z  publicznych  środków  finansowych,  w  tym  przyznana  kwota  płatności
+bezpośrednich  lub  przejściowego  wsparcia  krajowego  lub  płatności  dla  obszarów  z  ograniczeniami naturalnymi lub innymi szczególnymi ograniczeniami
+(ONW) będzie publikowana na stronie internetowej MRiRW;
+8) objąłem w posiadanie wszystkie grunty rolne wchodzące w skład gospodarstwa rolnego;
+9) objąłem w posiadanie zwierzęta objęte wnioskiem o przyznanie płatności;
+10) objąłem w posiadanie wszystkie użytki rolne położone na obszarach ONW;
+11) posiadam  plan poprawy  dobrostanu  zwierząt,  o  którym  mowa  w  przepisach  o  szczegółowych  warunkach  i szczegółowym trybie przyznawania i wypłaty
+płatności dobrostanowej.
+Zobowiązuję się do:
+1) niezwłocznego informowania na piśmie Agencji Restrukturyzacji i Modernizacji Rolnictwa za pośrednictwem systemu teleinformatycznego:
+    a) o każdym fakcie, który może mieć wpływ na nienależne lub nadmierne przyznanie płatności objętych wnioskiem o przyznanie płatności,
+    b) o każdej zmianie, która nastąpi  w okresie od dnia złożenia niniejszego wniosku do dnia przyznania płatności objętych wnioskiem o przyznanie płatności;
+2) umożliwienia  wstępu  osobom upoważnionym do wykonywania czynności kontrolnych na teren mojego gospodarstwa rolnego, a także okazania dokumentów
+potwierdzających dane zawarte we wniosku o przyznanie płatności;
+3) prowadzenia w gospodarstwie rejestrów niezbędnych do otrzymania poszczególnych płatności w ramach ekoschematów.
+W  związku  z  art.  13  rozporządzenia  Parlamentu  Europejskiego  i  Rady  (UE)  2016/679  z  dnia  27  kwietnia  2016  r.  w  sprawie  ochrony osób  fizycznych
+w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie
+o  ochronie  danych)  (Dz.  Urz.  UE  L  119  z  04.05.2016,  str.  1,  Dz.  Urz.  UE  L  127  z  23.05.2018,  str.  2  oraz  Dz.  Urz.  UE  L  74  z  04.03.2021,  str.  35),  zwanego  dalej
+"Rozporządzeniem", Agencja Restrukturyzacji i Modernizacji Rolnictwa informuje, że:
+1)Administratorem  Pani/Pana  danych  osobowych,  zwanym  dalej „Administratorem  danych” jest Agencja Restrukturyzacji i Modernizacji Rolnictwa z siedzibą
+w Warszawie, Al. Jana Pawła II nr 70, 00-175 Warszawa.
+2)Z  Administratorem    danych    można    kontaktować    się    poprzez  e-mail:  info@arimr.gov.pl  lub  pisemnie  na  adres  korespondencyjny  Centrali  Agencji
+Restrukturyzacji i Modernizacji Rolnictwa: ul. Poleczki 33, 02-822 Warszawa.
+3)Administrator danych wyznaczył Inspektora ochrony danych, z którym można kontaktować się w sprawach dotyczących przetwarzania danych osobowych    oraz
+korzystania z praw związanych z przetwarzaniem danych, poprzez adres e-mail:  iod@arimr.gov.pl  lub  pisemnie  na  adres    korespondencyjny  Administratora
+danych, wskazany w pkt 2.
+4)Zebrane  dane  osobowe  będą  przetwarzane  przez  Administratora  danych  na  podstawie  art.  6  ust.  1  lit.  c  Rozporządzenia,  tj.  gdy jest  to  niezbędne  do
+wypełnienia obowiązku prawnego ciążącego na Administratorze danych.
+5)Zebrane dane osobowe na podstawie  art.  6  ust.  1  lit. c Rozporządzenia będą przetwarzane przez Administratora danych w celu realizacji zadań wynikających
+z ustawy z dnia 9 maja 2008 r. o Agencji Restrukturyzacji i Modernizacji Rolnictwa (Dz. U. z 2022 r. poz. 2157, z późn. zm.) oraz z ustawy z dnia 8 lutego 2023 r.
+o Planie Strategicznym dla Wspólnej Polityki Rolnej na lata 2023-2027 (Dz. U. poz. 412) i aktów wykonawczych do tej ustawy, o ile ubiega się Pani/Pan o
+przyznanie przynajmniej jednej z wymienionych płatności tj.: płatności bezpośrednie, przejściowe wsparcie krajowe, płatności dla obszarów z ograniczeniami
+naturalnymi lub innymi szczególnymi ograniczeniami (ONW), tj. w celu przyznania płatności bezpośrednich lub przejściowego wsparcia krajowego lub płatności
+ONW w przypadku przekazania gospodarstwa rolnego/śmierci rolnika/następstwa prawnego/nabycia gospodarstwa rolnego.
+6)Zebrane dane osobowe mogą być udostępniane organom kontrolnym, podmiotom uprawnionym do przetwarzania danych osobowych na podstawie przepisów
+powszechnie  obowiązującego  prawa  oraz  podmiotom  przetwarzającym  dane  osobowe  na  zlecenie  Administratora  danych  w  związku  z  wykonywaniem
+powierzonego  im  zadania  w  drodze  zawartej  umowy,  m.in.  dostawcom  IT,  wykonawcom  kontroli  na  miejscu,  wykonawcom  uczestniczącym  w  procesie
+aktualizacji baz danych systemu LPIS.
+7)Zebrane dane osobowe na podstawie art. 6 ust. 1 lit. c Rozporządzenia, będą przetwarzane przez okres niezbędny do realizacji zadań, o których mowa w pkt 5.
+Okres  przechowywania  danych  zostanie  każdorazowo  przedłużony  o  okres  przedawnienia  roszczeń,  jeżeli  przetwarzanie  danych  będzie  niezbędne  do
+dochodzenia  roszczeń lub do obrony przed takimi roszczeniami przez Administratora danych. Ponadto, okres przechowywania danych zostanie przedłużony na
+okres potrzebny do prowadzenia archiwizacji.
+8) Przysługuje Pani/Panu  prawo  dostępu  do  Pani/Pana  danych  osobowych,  prawo żądania ich sprostowania, usunięcia lub ograniczenia  ich  przetwarzania
+w przypadkach określonych w Rozporządzeniu.
+9)W przypadku uznania, że przetwarzanie danych osobowych narusza przepisy Rozporządzenia, przysługuje Pani/Panu prawo wniesienia  skargi  do  Prezesa
+Urzędu Ochrony Danych Osobowych.
+10)Podanie danych osobowych na podstawie art. 6 ust. 1 lit. c Rozporządzenia we wniosku o przyznanie płatności w przypadku przekazania  gospodarstwa
+rolnego/śmierci  rolnika/następstwa  prawnego/nabycia  gospodarstwa  rolnego,  wynika  z  obowiązku  zawartego  w  przepisach  powszechnie  obowiązujących,
+a konsekwencją niepodania tych danych osobowych po jednokrotnym wezwaniu do usunięcia braków, będzie pozostawienie wniosku bez rozpoznania.
+XII. INFORMACJA O PRZETWARZANIU DANYCH OSOBOWYCH – dotyczy osób fizycznych oraz pełnomocnika
+Liczba załączników
+12. Do wniosku składanego w przypadku następstwa prawnego:
+Dokument potwierdzający zaistnienie następstwa prawnego lub jego kopia ........................................................................................
+nazwa dokumentu
+Kopie stron nowego planu poprawy dobrostanu zwierząt
+Dokumenty wymagane przy realizacji ekoschematu Dobrostan zwierząt:
+.......................................................
+.......................................................
+.......................................................
+Inne załączniki: ...............................................................................................................................................
+12. Do wniosku składanego w przypadku następstwa prawnego:
+Dokument potwierdzający zaistnienie następstwa prawnego lub jego kopia ........................................................................................
+nazwa dokumentu
+Kopie stron nowego planu poprawy dobrostanu zwierząt
+Dokumenty wymagane przy realizacji ekoschematu Dobrostan zwierząt:
+.......................................................
+.......................................................
+.......................................................
+Inne załączniki: ...............................................................................................................................................
+
+
+5/55/5
+XIII.  KLAUZULA  INFORMACYJNA  DOTYCZĄCA  PRZETWARZANIA  PRZEZ  AGENCJĘ  RESTRUKTURYZACJI  I  MODERNIZACJI
+ROLNICTWA DANYCH OSOBOWYCH OSÓB FIZYCZNYCH, KTÓRE ZOSTANĄ PRZEKAZANE PRZEZ BENEFICJENTA
+Zgodnie z treścią z art. 14 Rozporządzenia, w odniesieniu do danych osób fizycznych, które zostały przekazane przez Beneficjenta  w  dokumentach
+aplikacyjnych w celu przyznania płatności bezpośrednich, przejściowego wsparcia krajowego, płatności ONW, Agencja Restrukturyzacji  i  Modernizacji
+Rolnictwa informuje, że:
+1)Administratorem Pani/Pana danych osobowych (dalej: Administrator danych) pozyskanych w związku z  realizacją  zadań, o których  mowa  w  pkt.  3
+poniżej, jest Agencja Restrukturyzacji i Modernizacji Rolnictwa z siedzibą w Warszawie, Al. Jana Pawła II nr 70, 00-175 Warszawa. Z Administratorem
+danych  można  kontaktować  się  poprzez  e-mail:  info@arimr.gov.pl  lub  pisemnie  na  adres  korespondencyjny  Centrali  Agencji  Restrukturyzacji
+Modernizacji Rolnictwa: ul. Poleczki 33, 02-822 Warszawa.
+2)Administrator  danych  wyznaczył  inspektora  ochrony  danych,  z  którym  można  kontaktować   się  w  sprawach  dotyczących
+     przetwarzania  danych  osobowych  oraz  korzystania  z  praw  związanych  z  przetwarzaniem  danych,  poprzez  adres  e-mail:
+    iod@arimr.gov.pl lub pisemnie na adres korespondencyjny Administratora danych, wskazany w pkt 1.
+3) Pani/Pana dane osobowe pozyskane przez Administratora danych przetwarzane będą na podstawie art. 6 ust. 1 lit. c Rozporządzenia w celu realizacji
+zadań wynikających z: ustawy z dnia 9 maja 2008 r. o Agencji Restrukturyzacji i Modernizacji Rolnictwa (Dz. U. z 2022 r. poz. 2157, z późn. zm.) oraz
+z ustawy z dnia 8 lutego 2023 r o Planie Strategicznym dla Wspólnej Polityki Rolnej na lata 2023-2027 (Dz. U. poz. 412) i aktów wykonawczych do tej
+ustawy,
+
+o ile Beneficjent ubiega się o przyznanie przynajmniej jednej z wymienionych płatności tj.: płatności bezpośrednie, przejściowe wsparcie
+krajowe, płatności  dla obszarów  z ograniczeniami naturalnymi lub  innymi szczególnymi ograniczeniami (ONW), tj. w celu przyznania beneficjentowi
+płatności bezpośrednich lub przejściowego wsparcia krajowego lub płatności ONW w przypadku przekazania gospodarstwa rolnego/śmierci rolnika/
+następstwa prawnego/nabycia gospodarstwa rolnego.
+4)Administrator danych będzie przetwarzał następujące kategorie Pani/Pana danych: dane identyfikacyjne oraz dane kontaktowe.
+5)  Odbiorcami Pani/Pana danych osobowych mogą być organy kontrolne, podmioty uprawnione do przetwarzania danych osobowych na podstawie
+przepisów  powszechnie  obowiązującego  prawa,  podmioty  przetwarzające  dane  osobowe  na  zlecenie  Administratora  danych  w  związku z
+wykonywaniem powierzonego im zadania w drodze zawartej umowy, m.in. dostawcy IT, wykonawcy kontroli na miejscu, wykonawcy uczestniczący w
+procesie aktualizacji baz danych systemu LPIS.
+6) Pani/Pana dane osobowe będą przetwarzane przez okres niezbędny do realizacji zadań, o których mowa w pkt 3. Okres przechowywania  danych
+zostanie każdorazowo przedłużony o okres przedawnienia roszczeń, jeżeli przetwarzanie danych będzie niezbędne do dochodzenia roszczeń lub do
+obrony przed takimi roszczeniami przez Administratora danych. Ponadto, okres przechowywania danych zostanie przedłużony na okres potrzebny do
+przeprowadzenia archiwizacji.
+7)Przysługuje  Pani/Panu  prawo  dostępu  do  Pani/Pana  danych  osobowych,  prawo  żądania  ich  sprostowania,  usunięcia  lub  ograniczenia ich
+przetwarzania.
+8)W przypadku uznania, że przetwarzanie danych osobowych narusza przepisy Rozporządzenia, przysługuje Pani/Panu prawo wniesienia  skargi  do
+Prezesa Urzędu Ochrony Danych Osobowych.
+9)   Pani/Pana dane Administrator danych uzyskał od Beneficjenta.
+13. Data wypełnienia wniosku i podpis wnioskodawcy 13. Data wypełnienia wniosku i podpis wnioskodawcy
+...........................................................................................................
+czytelny podpis przejmującego lub nabywcy lub spadkobiercy lub zapisobiercy windykacyjnego
+lub następcy prawnego
+XV. DATA I PODPIS PRZEJMUJĄCEGO LUB NABYWCY LUB SPADKOBIERCY LUB ZAPISOBIERCY WINDYKACYJNEGO LUB
+NASTĘPCY PRAWNEGO LUB PEŁNOMOCNIKA LUB REPREZENTANTA
+data wypełnienia wniosku (dzień - miesiąc - rok)data wypełnienia wniosku (dzień - miesiąc - rok)
+1)Przyjmuję do wiadomości, iż ARiMR staje się Administratorem danych osobowych osób fizycznych otrzymanych ode mnie, które to dane  osobowe
+bezpośrednio lub pośrednio zostały przeze mnie pozyskane w celu przyznania płatności bezpośrednich lub przejściowego wsparcia krajowego lub
+płatności ONW w przypadku przekazania gospodarstwa rolnego/śmierci rolnika/następstwa prawnego/nabycia gospodarstwa rolnego.
+2)Oświadczam, że dane osobowe, o których mowa w pkt 1, przetwarzam zgodnie z obowiązującymi w tym zakresie regulacjami prawnymi i  jestem
+uprawniony do ich przekazania ARiMR oraz uczyniłem zadość wszelkim obowiązkom związanym z ich przekazaniem, a w szczególności zostały
+poinformowane osoby, których dane przekazuję, o fakcie i celu ich przekazania.
+3)Oświadczam, iż wszystkie osoby fizyczne, o których mowa w pkt 1, zostały poinformowane o treści klauzuli zawartej w sekcji XIII wniosku.
+4)Jednocześnie zobowiązuję się poinformować osoby, których dane osobowe będą przekazywane do ARiMR w celu obsługi wniosku o przyznanie
+płatności  w  przypadku  przekazania  gospodarstwa  rolnego/śmierci  rolnika/następstwa  prawnego/nabycia  gospodarstwa  rolnego o  treści  klauzuli
+zawartej w sekcji XIII wniosku.
+.................................................................................................................................
+czytelny podpis przejmującego lub nabywcy lub spadkobiercy lub zapisobiercy
+windykacyjnego lub następcy prawnego
+.................................................................................................................................
+czytelny podpis przejmującego lub nabywcy lub spadkobiercy lub zapisobiercy
+windykacyjnego lub następcy prawnego
+XIV.OŚWIADCZENIE WOBEC ARiMR O WYPEŁNIENIU OBOWIĄZKU INFORMACYJNEGO WOBEC INNYCH OSÓB FIZYCZNYCH
+data wypełnienia wniosku (dzień - miesiąc - rok)data wypełnienia wniosku (dzień - miesiąc - rok)
