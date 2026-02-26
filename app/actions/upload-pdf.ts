@@ -61,7 +61,7 @@ export async function uploadPdf(formData: FormData) {
         const fileName = `${user.id}/${campaignYear}_${Date.now()}_${file.name}`
         const { data: uploadData, error: uploadError } = await supabase
             .storage
-            .from('wnioski')
+            .from('wnioski-pdf')
             .upload(fileName, file)
 
         if (uploadError) {
