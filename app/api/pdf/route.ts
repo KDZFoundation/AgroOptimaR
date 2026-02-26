@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { parsePdfApplication } from '@/lib/rag/pdf-parser'
+import { parsePdfApplication } from '@/lib/parsers'
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
 

@@ -2,7 +2,7 @@
 
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { parsePdfApplication } from '@/lib/rag/pdf-parser'
+import { parsePdfApplication } from '@/lib/parsers'
 import { revalidatePath } from 'next/cache'
 
 export async function uploadPdf(formData: FormData) {

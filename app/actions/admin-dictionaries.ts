@@ -4,6 +4,8 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
 
+// --- UPRAWY ---
+
 export async function addUprawa(formData: FormData) {
     const cookieStore = await cookies()
     const supabase = createServerClient(
@@ -49,7 +51,7 @@ export async function addUprawa(formData: FormData) {
 
     if (error) return { error: error.message }
 
-    revalidatePath('/admin/slowniki/uprawy')
+    revalidatePath('/admin/slowniki')
     return { success: true }
 }
 
@@ -93,6 +95,103 @@ export async function deleteUprawa(id: string) {
     const { error } = await supabase.from('slownik_uprawy').delete().eq('id', id)
     if (error) return { error: error.message }
 
-    revalidatePath('/admin/slowniki/uprawy')
+    revalidatePath('/admin/slowniki')
+    return { success: true }
+}
+
+// --- EKOSCHEMATY ---
+
+export async function addEkoschemat(formData: FormData) {
+    const cookieStore = await cookies()
+    const supabase = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+            cookies: {
+                getAll() {
+                    return cookieStore.getAll()
+                },
+                setAll(cookiesToSet) {
+                    try {
+                        cookiesToSet.forEach(({ name, value, options }) =>
+                            cookieStore.set(name, value, options)
+                        )
+                    } catch {}
+                },
+            },
+        }
+    )
+
+    // Check permissions
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return { error: 'Unauthorized' }
+
+    const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
+    if (profile?.role !== 'admin') return { error: 'Forbidden' }
+
+    // Parse data
+    const kod = formData.get('kod') as string
+    const nazwa = formData.get('nazwa') as string
+    const punkty = parseFloat(formData.get('punkty') as string || '0')
+    const stawka_pln = parseFloat(formData.get('stawka_pln') as string || '0')
+    const opis = formData.get('opis') as string
+
+    if (!kod || !nazwa) return { error: 'Missing fields' }
+
+    const { error } = await supabase.from('slownik_ekoschematy').insert({
+        kod,
+        nazwa,
+        punkty,
+        stawka_pln,
+        opis
+    })
+
+    if (error) return { error: error.message }
+
+    revalidatePath('/admin/slowniki')
+    return { success: true }
+}
+
+export async function getEkoschematy() {
+    const cookieStore = await cookies()
+    const supabase = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+            cookies: {
+                getAll() { return cookieStore.getAll() },
+                setAll(cookiesToSet) { try { cookiesToSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options)) } catch {} }
+            }
+        }
+    )
+
+    const { data } = await supabase.from('slownik_ekoschematy').select('*').order('kod')
+    return data || []
+}
+
+export async function deleteEkoschemat(id: string) {
+    const cookieStore = await cookies()
+    const supabase = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+            cookies: {
+                getAll() { return cookieStore.getAll() },
+                setAll(cookiesToSet) { try { cookiesToSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options)) } catch {} }
+            }
+        }
+    )
+
+     // Check permissions
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return { error: 'Unauthorized' }
+
+    const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
+    if (profile?.role !== 'admin') return { error: 'Forbidden' }
+
+    const { error } = await supabase.from('slownik_ekoschematy').delete().eq('id', id)
+    if (error) return { error: error.message }
+
+    revalidatePath('/admin/slowniki')
     return { success: true }
 }

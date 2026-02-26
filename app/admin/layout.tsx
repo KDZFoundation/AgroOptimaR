@@ -33,13 +33,9 @@ export default function AdminLayout({
                         Słowniki
                     </div>
 
-                    <Link href="/admin/slowniki/uprawy" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition-colors text-slate-300 hover:text-white">
+                    <Link href="/admin/slowniki" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition-colors text-slate-300 hover:text-white">
                         <BookOpen className="w-5 h-5" />
-                        <span>Uprawy</span>
-                    </Link>
-                    <Link href="/admin/slowniki/ekoschematy" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition-colors text-slate-300 hover:text-white">
-                        <BookOpen className="w-5 h-5" />
-                        <span>Ekoschematy</span>
+                        <span>Słowniki systemowe</span>
                     </Link>
                 </nav>
 
