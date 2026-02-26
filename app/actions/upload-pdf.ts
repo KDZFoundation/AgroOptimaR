@@ -2,7 +2,7 @@
 
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { parsePdfApplication } from '@/lib/rag/pdf-parser'
+import { parsePdfApplication } from '@/lib/parsers'
 import { revalidatePath } from 'next/cache'
 
 export async function uploadPdf(formData: FormData) {
@@ -61,7 +61,7 @@ export async function uploadPdf(formData: FormData) {
         const fileName = `${user.id}/${campaignYear}_${Date.now()}_${file.name}`
         const { data: uploadData, error: uploadError } = await supabase
             .storage
-            .from('wnioski')
+            .from('wnioski-pdf')
             .upload(fileName, file)
 
         if (uploadError) {

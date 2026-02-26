@@ -1,4 +1,4 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function updateSession(request: NextRequest) {
@@ -13,42 +13,19 @@ export async function updateSession(request: NextRequest) {
         process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
         {
             cookies: {
-                get(name: string) {
-                    return request.cookies.get(name)?.value
+                getAll() {
+                    return request.cookies.getAll()
                 },
-                set(name: string, value: string, options: CookieOptions) {
-                    request.cookies.set({
-                        name,
-                        value,
-                        ...options,
-                    })
+                setAll(cookiesToSet) {
+                    cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
                     response = NextResponse.next({
                         request: {
                             headers: request.headers,
                         },
                     })
-                    response.cookies.set({
-                        name,
-                        value,
-                        ...options,
-                    })
-                },
-                remove(name: string, options: CookieOptions) {
-                    request.cookies.set({
-                        name,
-                        value: '',
-                        ...options,
-                    })
-                    response = NextResponse.next({
-                        request: {
-                            headers: request.headers,
-                        },
-                    })
-                    response.cookies.set({
-                        name,
-                        value: '',
-                        ...options,
-                    })
+                    cookiesToSet.forEach(({ name, value, options }) =>
+                        response.cookies.set(name, value, options)
+                    )
                 },
             },
         }
@@ -57,10 +34,6 @@ export async function updateSession(request: NextRequest) {
     const { data: { user } } = await supabase.auth.getUser()
 
     // Ochrona tras /(dashboard)/
-    // Zakładamy, że trasy dashboardu nie mają prefixu /dashboard, ale są w grupach tras
-    // Jednak w App Routerze grupy tras /() nie pojawiają się w URL.
-    // Musimy sprawdzić po konkretnych ścieżkach lub wykluczyć /login i /rejestracja.
-
     const publicPaths = ['/login', '/rejestracja', '/auth/callback']
     const isPublicPath = publicPaths.some(path => request.nextUrl.pathname.startsWith(path))
 
@@ -80,9 +53,6 @@ export async function updateSession(request: NextRequest) {
             .eq('id', user.id)
             .single()
 
-         // Jeśli nie ma profilu lub rola nie jest admin, przekieruj
-         // W rzeczywistości warto to cachować lub trzymać w metadanych użytkownika (custom claims)
-         // dla wydajności, ale na start zapytanie DB wystarczy.
          if (!profile || profile.role !== 'admin') {
              return NextResponse.redirect(new URL('/pulpit', request.url))
          }
