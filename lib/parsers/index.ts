@@ -1,7 +1,9 @@
 
 // Use require for pdf-parse compatibility
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const pdf = require('pdf-parse');
+const pdfParseModule = require('pdf-parse');
+// pdf-parse might return { default: fn } in ESM/Turbopack environments
+const pdf = typeof pdfParseModule === 'function' ? pdfParseModule : pdfParseModule.default;
 
 import { removeNonPrintable } from '@/lib/rag/text-utils';
 import { AiApplicationParser } from './ai-parser';
