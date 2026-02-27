@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Search, ChevronLeft, ChevronRight, FileDown } from 'lucide-react'
 
 export interface Column<T> {
@@ -26,14 +26,21 @@ export function DataTable<T>({
     const [currentPage, setCurrentPage] = useState(1)
     const itemsPerPage = 10
 
-    const filteredData = data.filter(item => {
-        return Object.values(item as any).some(val =>
-            String(val).toLowerCase().includes(searchTerm.toLowerCase())
-        )
-    })
+    const filteredData = useMemo(() => {
+        return data.filter(item => {
+            return Object.values(item as any).some(val =>
+                String(val).toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        })
+    }, [data, searchTerm])
 
-    const totalPages = Math.ceil(filteredData.length / itemsPerPage)
-    const paginatedData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    const totalPages = useMemo(() => {
+        return Math.ceil(filteredData.length / itemsPerPage)
+    }, [filteredData.length, itemsPerPage])
+
+    const paginatedData = useMemo(() => {
+        return filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    }, [filteredData, currentPage, itemsPerPage])
 
     return (
         <div className="space-y-4">
