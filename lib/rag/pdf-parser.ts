@@ -2,6 +2,7 @@
 import * as pdf from 'pdf-parse'
 import { Anthropic } from 'anthropic'
 import { removeNonPrintable, extractJsonFromResponse } from './text-utils'
+import { redactPII, restorePII } from './pii-utils'
 
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY || '',
@@ -18,6 +19,9 @@ export async function parsePdfApplication(buffer: Buffer) {
         if (!cleanText || cleanText.length < 100) {
             throw new Error('Wyodrębniony tekst jest zbyt krótki lub pusty. Możliwy błąd odczytu PDF.')
         }
+
+        // Redakcja danych wrażliwych (PII) przed wysłaniem do zewnętrznego AI
+        const { redactedText, mapping } = redactPII(cleanText)
 
         // Prompt dla Claude do ekstrakcji ustrukturyzowanych danych
         const response = await anthropic.messages.create({
@@ -50,27 +54,31 @@ WYMAGANA STRUKTURA JSON:
 }
 
 ZASADY:
-1. EP: Numer Producenta musi mieć 9 cyfr.
+1. EP: Numer Producenta musi mieć 9 cyfr. Jeśli widzisz placeholder typu [EP_0], zachowaj go.
 2. Powierzchnia: Zawsze jako liczba (float), nie tekst.
 3. Kody płatności: Wyciągnij kody takie jak JPO, uzupełniająca, ekoschematy (E_...).
 4. Jeśli dana wartość jest niepewna, pomiń ją lub zostaw null, nie zmyślaj danych.
+5. PII: Niektóre dane osobowe zostały zastąpione placeholderami (np. [NAME_0], [EP_0]). Traktuj je jako poprawne wartości i umieść w odpowiednich polach JSON.
 
 Zwróć TYLKO i WYŁĄCZNIE obiekt JSON.`,
             messages: [
                 {
                     role: 'user',
-                    content: `Przeanalizuj poniższy tekst wniosku i wyodrębnij dane zgodnie ze schematem:\n\n${cleanText}`
+                    content: `Przeanalizuj poniższy tekst wniosku i wyodrębnij dane zgodnie ze schematem:\n\n${redactedText}`
                 }
             ]
         })
 
         const content = response.content[0].type === 'text' ? response.content[0].text : ''
-        const parsedData = extractJsonFromResponse(content)
+        let parsedData = extractJsonFromResponse(content)
 
         if (!parsedData) {
             console.error('Nie udało się sparować JSON z odpowiedzi Claude:', content)
             return { raw_content: content, error: 'Błąd formatowania odpowiedzi AI' }
         }
+
+        // Przywrócenie danych wrażliwych (unredaction)
+        parsedData = restorePII(parsedData, mapping)
 
         // Post-processing dla lepszej poprawności (inspirowane Open Notebook/AgroOptima)
         if (parsedData.podmiot?.ep) {
