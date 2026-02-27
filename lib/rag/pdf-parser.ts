@@ -3,6 +3,26 @@ import * as pdf from 'pdf-parse'
 import { Anthropic } from 'anthropic'
 import { removeNonPrintable, extractJsonFromResponse } from './text-utils'
 
+export interface PdfApplicationData {
+    podmiot?: {
+        ep?: string | number;
+        nazwa?: string;
+        adres?: string;
+    };
+    dzialki?: Array<{
+        nr_dzialki?: string;
+        pow_dzialki_ha?: string | number;
+        uprawa?: string;
+        kod_uprawy?: string;
+        platnosci?: string[];
+    }>;
+    ekoschematy_ogolne?: string[];
+    podsumowanie?: {
+        liczba_dzialek?: number;
+        calkowita_powierzchnia_ha?: number;
+    };
+}
+
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY || '',
 })
@@ -65,7 +85,7 @@ Zwróć TYLKO i WYŁĄCZNIE obiekt JSON.`,
         })
 
         const content = response.content[0].type === 'text' ? response.content[0].text : ''
-        const parsedData = extractJsonFromResponse(content)
+        const parsedData = extractJsonFromResponse<PdfApplicationData>(content)
 
         if (!parsedData) {
             console.error('Nie udało się sparować JSON z odpowiedzi Claude:', content)
@@ -77,8 +97,8 @@ Zwróć TYLKO i WYŁĄCZNIE obiekt JSON.`,
             parsedData.podmiot.ep = parsedData.podmiot.ep.toString().replace(/\s/g, '')
         }
 
-        if (Array.isArray(parsedData.dzialki)) {
-            parsedData.dzialki = parsedData.dzialki.map((d: any) => ({
+        if (parsedData.dzialki && Array.isArray(parsedData.dzialki)) {
+            parsedData.dzialki = parsedData.dzialki.map((d) => ({
                 ...d,
                 nr_dzialki: typeof d.nr_dzialki === 'string' ? d.nr_dzialki.replace(/\s/g, '') : d.nr_dzialki,
                 pow_dzialki_ha: typeof d.pow_dzialki_ha === 'string' ? parseFloat(d.pow_dzialki_ha.replace(',', '.')) : d.pow_dzialki_ha

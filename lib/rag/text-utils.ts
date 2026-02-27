@@ -30,7 +30,7 @@ export function removeNonPrintable(text: string): string {
 /**
  * Extracts JSON content from AI response, handling potential markdown blocks or thinking tags.
  */
-export function extractJsonFromResponse(content: string): any {
+export function extractJsonFromResponse<T = any>(content: string): T | null {
     if (!content) return null;
 
     // Remove thinking tags if present
@@ -51,7 +51,7 @@ export function extractJsonFromResponse(content: string): any {
     }
 
     try {
-        return JSON.parse(content);
+        return JSON.parse(content) as T;
     } catch (e) {
         console.error("Failed to parse JSON from AI response:", e);
         return null;
